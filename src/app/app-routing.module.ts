@@ -5,8 +5,9 @@ import { PizzasAddComponent, PizzasEditComponent, PizzasListComponent, PizzasVie
 import { HomeComponent, PageNotFoundComponent } from './main';
 import { RegisterUserComponent } from './security/register-user/register-user.component';
 import { LoginComponent } from './security/login/login.component';
-import { UserChoiceComponent } from './security/user-choice/user-choice.component';
+import { UserComponent } from './security/user/user.component';
 import { AuthGuard } from './security';
+import { LoginEmployeComponent } from './security/login-employe/login-employe.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full'},
@@ -18,8 +19,9 @@ const routes: Routes = [
   { path: 'pizzas/:id', component: PizzasViewComponent},
   { path: 'pizzas/:id/:kk', component: PizzasViewComponent},
   { path: 'registro', component: RegisterUserComponent, data: {pageTitle:'registro'}},
-  { path: 'user-choice', component: UserChoiceComponent, data: {pageTitle:'Iniciar sesion'}},
+  { path: 'user', component: UserComponent, data: {pageTitle:'Iniciar sesion'}},
   { path: 'login', component: LoginComponent, data: {pageTitle:'login'}},
+  { path: 'login-employe', component: LoginEmployeComponent, data: {pageTitle:'login-employe'}},
   { path: 'config', loadChildren: () => import('./config/config.module').then(mod => mod.ConfigModule)},
   { path: '404.html', component: PageNotFoundComponent},
   { path: '**', component: PageNotFoundComponent},
