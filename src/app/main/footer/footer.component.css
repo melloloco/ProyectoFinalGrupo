@@ -1,0 +1,311 @@
+@charset "utf-8";
+
+@import url("@fortawesome/fontawesome-free/css/all.css");
+
+/* Header /	Prueba de Front End
+--------------------------------------------------------------------------------------------------------------- */
+
+#header #logo{margin:22px 0 0 0;}
+
+
+/* Page Intro / Principal
+--------------------------------------------------------------------------------------------------------------- */
+#pageintro{padding:200px 0 280px;}
+
+#pageintro article, #pageintro article p{display:block; max-width:75%; margin:0 auto; text-align:center;}
+#pageintro article p{max-width:65%; line-height:2rem;}
+#pageintro .heading{margin-bottom:20px; font-size:4rem;}
+#pageintro footer{margin-top:50px;}
+
+
+/* Content Area / Contenedor
+--------------------------------------------------------------------------------------------------------------- */
+.container{padding:80px 0;}
+
+/* Content */
+
+.sectiontitle{display:block; max-width:55%; margin:0 auto 80px; text-align:center;}
+.sectiontitle *{margin:0;}
+
+.elements-three li, .elements-four li{margin-bottom:50px;}
+.elements-three li:nth-last-child(-n+3), .elements-four li:nth-last-child(-n+4){margin-bottom:0;}/* Removes bottom margin from the last line of items - margin is restored in the media queries when items stack */
+.elements-three li:nth-child(3n+1), .elements-four li:nth-child(4n+1){margin-left:0; clear:left;}/* Removes the need to add class="first" */
+.elements article{display:block; padding:30px 15px; border-radius:50px 0; text-align:center;}
+.elements article *{margin:0 0 15px 0; padding:0; line-height:1;}
+.elements article i{width:60px; height:60px; line-height:60px; margin-bottom:30px; font-size:1.6rem; text-align:center; border-radius:50%;}
+.elements article .heading{font-size:1.2rem; font-weight:700;}
+.elements article p{margin:0; line-height:normal;}
+
+#introblocks{display:block; position:relative; margin:-160px 0 130px 0; z-index:1;}/* 160px => 80px + container padding */
+
+/* Sidebar */
+.sidebar .sdb_holder{margin-bottom:50px;}
+.sidebar .sdb_holder:last-child{margin-bottom:0;}
+
+
+/* Footer / Pie de pagina
+--------------------------------------------------------------------------------------------------------------- */
+#footer{padding:80px 0;}
+
+#footer .heading{margin-bottom:50px; font-size:1.2rem;}
+#footer .logoname{margin-bottom:50px;}
+#footer p + .faico{margin-top:30px;}
+
+#footer .linklist li{display:block; margin-bottom:15px; padding:0 0 15px 0; border-bottom:1px solid;}
+#footer .linklist li:last-child{margin:0; padding:0; border:none;}
+#footer .linklist li::before, #footer .linklist li::after{display:table; content:"";}
+#footer .linklist li, #footer .linklist li::after{clear:both;}
+
+#footer .latestimg > li{float:left; width:30%; margin:0 0 5% 5%;}
+#footer .latestimg > li:nth-last-child(-n+3){margin-bottom:0;}/* Removes bottom margin from the last three items - margin is restored in the media queries when items stack */
+#footer .latestimg > li:nth-child(3n+1){margin-left:0; clear:left;}/* Removes the need to add class="first" */
+#footer .latestimg > li img{width:100%;}/* Force the image to resize to take the full space - may have to be changed for tablets, depends on personal preference */
+#footer .latestimg > li a.imgover{display:block;}
+
+
+/* Copyright
+--------------------------------------------------------------------------------------------------------------- */
+#copyright{padding:20px 0;}
+#copyright *{margin:0; padding:0;}
+
+
+/* Transition Fade / Transicion
+--------------------------------------------------------------------------------------------------------------- */
+*, *::before, *::after{transition:all .3s ease-in-out;}
+#mainav form *{transition:none !important;}
+
+
+/* Colours
+--------------------------------------------------------------------------------------------------------------- */
+body{color:#A5A6AA; background-color:#282E39;}
+a{color:#97A9BD;}
+a:active, a:focus{background:transparent !important;}
+hr, .borderedbox{border-color:#D7D7D7;}
+label span{color:#FF0000; background-color:inherit;}
+input:focus, textarea:focus, *:required:focus{border-color:#97A9BD !important;}
+
+.overlay{color:#FFFFFF; background-color:inherit;}
+.overlay::after{color:inherit; background-color:rgba(40,46,57,.7);}
+.overlay.light::after{background-color:rgba(151,169,189,.7);}
+
+.gradient{color:#474747; background:linear-gradient(to bottom, #F4F4F4 55%, #FFFFFF 50%, #FFFFFF 100%);}
+@media screen and (max-width:750px){
+	.gradient{background:linear-gradient(to bottom, #F4F4F4 24%, #FFFFFF 19%, #FFFFFF 100%);}
+}
+
+.btn, .btn.inverse:hover{color:#FFFFFF; background-color:#97A9BD; border-color:#97A9BD;}
+.btn:hover, .btn.inverse{color:inherit; background-color:transparent; border-color:inherit;}
+
+.imgover:hover::before{background-color:rgba(151,169,189,.5);}
+.imgover, .imgover:hover::after{color:#FFFFFF;}
+
+.logoname a{color:#FFFFFF;}
+.logoname::first-letter, .logoname span{color:#97BDAB;}
+
+
+/* Rows */
+.row1{color:#FFFFFF; background-color:#000000;}
+.row2{color:#474747; background-color:#F4F4F4;}
+.row3{color:#474747; background-color:#FFFFFF;}
+.row4{color:#A5A6AA; background-color:#000000;}
+.row5, .row5 a{color:#A5A6AA; background-color:#282E39;}
+.coloured{color:#FFFFFF; background-color:#97A9BD;}
+
+
+/* Header */
+#header #logo a{color:inherit;}
+
+
+/* Page Intro */
+#pageintro{color:#FFFFFF;}
+
+
+
+/* Footer */
+#footer .heading{color:#FFFFFF;}
+#footer hr, #footer .borderedbox, #footer .linklist li{border-color:rgba(255,255,255,.1);}
+
+
+
+/* Media Queries
+--------------------------------------------------------------------------------------------------------------- */
+@-ms-viewport{width:device-width;}
+
+
+/* Max Wrapper Width - Laptop, Desktop etc.
+--------------------------------------------------------------------------------------------------------------- */
+@media screen and (min-width:1140px){
+	.hoc{max-width:1140px;}
+}
+
+@media screen and (min-width:978px) and (max-width:1140px){
+	.hoc{max-width:95%;}
+}
+
+
+/* Mobile / Movil
+--------------------------------------------------------------------------------------------------------------- */
+@media screen and (max-width:978px){
+	.hoc{max-width:90%;}
+
+	#header{padding:30px 0;}
+	#header #logo{margin-top:0;}
+
+	#mainav ul{display:none;}
+	#mainav form{display:block; margin-top:2px;}
+
+  #comments input[type="reset"]{margin-top:10px;}
+	.pagination li{display:inline-block; margin:0 5px 5px 0;}
+
+	#copyright p:first-of-type{margin-bottom:10px;}
+}
+
+@media screen and (max-width:750px){
+	.imgl, .imgr{display:inline-block; float:none; margin:0 0 10px 0;}
+	.fl_left, .fl_right{display:block; float:none;}
+	.group .group > *:last-child, .clear .clear > *:last-child, .clear .group > *:last-child, .group .clear > *:last-child{margin-bottom:0;}/* Experimental - Needs more testing in different situations, stops double margin when stacking */
+	.one_half, .one_third, .two_third, .one_quarter, .two_quarter, .three_quarter{display:block; float:none; width:auto; margin:0 0 30px 0;}
+
+	#header{text-align:center;}
+	#header #logo{margin:0 0 15px 0;}
+
+	#pageintro article, #pageintro article p{max-width:none;}
+	#pageintro .heading{font-size:2rem;}
+
+	.sectiontitle{max-width:none;}
+	.shout figure, .team li, #latest > li{margin:0 auto 50px;}
+	.team li, #latest li{max-width:348px;}
+	.elements-three li:nth-last-child(-n+3), .elements-four li:nth-last-child(-n+4){margin-bottom:50px;}
+	.elements-three li:last-child, .elements-four li:last-child, .shout figure:last-child{margin-bottom:0;}
+
+	#ctdetails figure{margin-bottom:80px;}
+
+	#footer{padding-bottom:50px;}
+	#footer .latestimg > li, #footer .latestimg > li:nth-last-child(-n+3){display:inline-block; float:none; width:auto; margin:0 5% 5% 0;}
+	#footer .latestimg > li:last-child{margin-bottom:0;}
+	#footer .latestimg > li img{width:auto;}
+}
+
+@media screen and (min-width:451px) and (max-width:900px){
+	.pr-charts .pr-chart-ctrl{width:50%; margin-bottom:50px;}
+	.pr-charts .pr-chart-ctrl:nth-child(n+3){margin-bottom:0;}
+}
+
+@media screen and (max-width:450px){
+	.pr-charts .pr-chart-ctrl{width:100%; margin-bottom:50px;}
+	.pr-charts .pr-chart-ctrl:last-child{margin-bottom:0;}
+
+	#testimonials article figure img{float:none; margin:0 0 20px 0;}
+	#testimonials article figure figcaption{float:none; margin:0; text-align:center;}
+}
+
+
+/* Otros
+--------------------------------------------------------------------------------------------------------------- */
+@media screen and (max-width:650px){
+	.scrollable{display:block; width:100%; margin:0 0 30px 0; padding:0 0 15px 0; overflow:auto; overflow-x:scroll;}
+	.scrollable table{margin:0; padding:0; white-space:nowrap;}
+
+	.inline li{display:block; margin-bottom:10px;}
+	.pushright li{margin-right:0;}
+
+	.font-x2{font-size:1.6rem;}
+	.font-x3{font-size:1.8rem;}
+}
+
+html{overflow-y:scroll; overflow-x:hidden;}
+html, body{margin:0; padding:0; font-size:14px; line-height:1.6em;}
+
+*, *::before, *::after{box-sizing:border-box;}
+
+.bold{font-weight:bold;}
+.center{text-align:center;}
+.right{text-align:right;}
+.uppercase{text-transform:uppercase;}
+.capitalise{text-transform:capitalize;}
+.hidden{display:none;}
+.nospace{margin:0; padding:0; list-style:none;}
+.block{display:block;}
+.inline{display:inline-block;}
+.justified{text-align:justify;}
+.inline *{display:inline-block;}
+.inline *:last-child{margin-right:0;}
+.pushright li{margin-right:20px;}
+.pushright li:last-child{margin-right:0;}
+.borderedbox{border:1px solid;}
+.overlay{position:relative; z-index:1;}
+.overlay::after{display:block; position:absolute; top:0; left:0; width:100%; height:100%; content:""; z-index:-1;}
+.bgded{background-position:top center; background-repeat:no-repeat; background-size:cover;}
+.circle{border-radius:50%; background-clip:padding-box;}
+
+.logoname{margin:0; padding:0; font-size:1.8rem; font-variant:small-caps;}
+.logoname::first-letter, .logoname span{margin:0 5px; font-size:2.4rem; font-weight:700; text-transform:uppercase;}
+.logoname::first-letter{margin-left:0;}
+
+.btn{display:inline-block; padding:8px 18px 10px; text-transform:uppercase; border:1px solid;}
+
+blockquote{display:block; position:relative; width:100%; margin:0; padding:30px; line-height:1.4; z-index:1;}
+blockquote::before{display:block; position:absolute; top:0; left:0; font-family:"Font Awesome\ 5 Free"; font-weight:900; font-size:60px; line-height:60px; content:"\f10d"; z-index:-1;}
+
+.clear, .group{display:block;}
+.clear::before, .clear::after, .group::before, .group::after{display:table; content:"";}
+.clear, .clear::after, .group, .group::after{clear:both;}
+
+a{outline:none; text-decoration:none;}
+
+.fl_left, .imgl{float:left;}
+.fl_right, .imgr{float:right;}
+
+img{width:auto; max-width:100%; height:auto; margin:0; padding:0; border:none; line-height:normal; vertical-align:middle;}
+.imgl{margin:0 15px 10px 0; clear:left;}
+.imgr{margin:0 0 10px 15px; clear:right;}
+.imgover{display:inline-block; position:relative; max-width:100%;}
+.imgover::before, .imgover::after{display:block; position:absolute; content:""; text-align:center; opacity:0;}
+.imgover::before{top:0; right:0; bottom:0; left:0;}
+.imgover::after{top:50%; left:50%; width:50px; height:50px; line-height:50px; margin:-25px 0 0 -25px; font-family:"Font Awesome\ 5 Free"; font-weight:900; content:"\f067";/* cambiar este icono por otro que tenga sentido, ahora mismo esta puesto un signo + */ font-size:28px;}
+.imgover:hover::before, .imgover:hover::after{opacity:1;}
+
+
+/* Fonts/Fuentes
+--------------------------------------------------------------------------------------------------------------- */
+body, input, textarea, select{font-family:Verdana, Geneva, sans-serif;}
+h1, h2, h3, h4, h5, h6, .heading{font-family:Georgia, "Times New Roman", Times, serif;}
+
+
+/* General
+--------------------------------------------------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6, .heading{margin:0 0 20px 0; font-size:1.4rem; line-height:normal; font-weight:normal; text-transform:capitalize;}
+.heading.nospace{margin-bottom:0;}
+
+address{font-style:normal; font-weight:normal;}
+hr{display:block; width:100%; height:1px; border:solid; border-width:1px 0 0 0;}
+
+.font-xs{font-size:1rem;}
+.font-x2{font-size:2.2rem;}
+.font-x3{font-size:3.2rem;}
+
+
+.hoc{display:block; margin:0 auto;}
+
+
+/* HTML 5 Overrides
+--------------------------------------------------------------------------------------------------------------- */
+footer{display:block; margin:0; padding:0;}
+
+
+/* Grid
+--------------------------------------------------------------------------------------------------------------- */
+.one_half, .one_third, .two_third, .one_quarter, .two_quarter, .three_quarter{float:left; margin:0 0 0 4.21052%; list-style:none;}
+
+.first{margin-left:0; clear:left;}
+
+.one_quarter{width:21.8421%;}
+.one_third{width:30.52631%;}
+.one_half, .two_quarter{width:47.89473%;}
+.two_third{width:65.26315%;}
+.three_quarter{width:73.94736%;}
+
+
+/* Font awesome/iconos
+--------------------------------------------------------------------------------------------------------------- */
+#fa-euro-sign{font-size: 12px;}
