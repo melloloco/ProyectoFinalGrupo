@@ -309,3 +309,18 @@ footer{display:block; margin:0; padding:0;}
 /* Font awesome/iconos
 --------------------------------------------------------------------------------------------------------------- */
 #fa-euro-sign{font-size: 12px;}
+
+/* Social media
+--------------------------------------------------------------------------------------------------------------- */
+.socialmedia{width: 100%; height: 100%; background-color: inherit;}
+.socialinst{position: relative; padding: 6px 6px; float: left; background-color: inherit;}
+.socialtwit{position: relative; padding: 6px 6px; float: left; background-color: inherit;}
+.socialface{position: relative; padding: 6px 6px; float: left; background-color: inherit;}
+.socialgith{position: relative; padding: 6px 6px; float: left; background-color: inherit;}
+.socialyout{position: relative; padding: 6px 6px; float: left; background-color: inherit;}
+#socialface{font-size: 38px;}
+#socialyout{font-size: 38px;}
+#socialgith{font-size: 38px;}
+#socialinst{font-size: 38px;}
+#socialtwit{font-size: 38px;}
+
