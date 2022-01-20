@@ -36,5 +36,5 @@
     </tr>
   </tbody>
 </table>
-<p-paginator [first]="VM.rowsPerPage*VM.page" [rows]="VM.rowsPerPage" [totalRecords]="VM.totalRows"
+<p-paginator [first]="VM.sizePerPage*VM.page" [rows]="VM.sizePerPage" [totalRecords]="VM.totalSize"
     [pageLinkSize]="5" (onPageChange)="VM.load($event.page)"></p-paginator>
