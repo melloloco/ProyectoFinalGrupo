@@ -47,7 +47,7 @@
 --------------------------------------------------------------------------------------------------------------- */
 #footer{padding:80px 0;}
 
-#footer .heading{margin-bottom:50px; font-size:1.2rem;}
+#footer .heading{margin-bottom:30px; font-size:1.2rem;}
 #footer .logoname{margin-bottom:50px;}
 #footer p + .faico{margin-top:30px;}
 
@@ -100,7 +100,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#97A9BD !important;}
 .imgover, .imgover:hover::after{color:#FFFFFF;}
 
 .logoname a{color:#FFFFFF;}
-.logoname::first-letter, .logoname span{color:#97BDAB;}
+.logoname::first-letter, .logoname span{color:#d8cbbb;}
 
 
 /* Rows */
@@ -299,7 +299,7 @@ footer{display:block; margin:0; padding:0;}
 
 .first{margin-left:0; clear:left;}
 
-.one_quarter{width:21.8421%;}
+.one_quarter{width:29.9021%;}
 .one_third{width:30.52631%;}
 .one_half, .two_quarter{width:47.89473%;}
 .two_third{width:65.26315%;}
@@ -309,3 +309,18 @@ footer{display:block; margin:0; padding:0;}
 /* Font awesome/iconos
 --------------------------------------------------------------------------------------------------------------- */
 #fa-euro-sign{font-size: 12px;}
+
+/* Social media
+--------------------------------------------------------------------------------------------------------------- */
+.socialmedia{width: 100%; height: 100%; background-color: inherit;}
+.socialinst{position: relative; padding: 6px 6px; float: left; background-color: inherit;}
+.socialtwit{position: relative; padding: 6px 6px; float: left; background-color: inherit;}
+.socialface{position: relative; padding: 6px 6px; float: left; background-color: inherit;}
+.socialgith{position: relative; padding: 6px 6px; float: left; background-color: inherit;}
+.socialyout{position: relative; padding: 6px 6px; float: left; background-color: inherit;}
+#socialface{font-size: 38px;}
+#socialyout{font-size: 38px;}
+#socialgith{font-size: 38px;}
+#socialinst{font-size: 38px;}
+#socialtwit{font-size: 38px;}
+
