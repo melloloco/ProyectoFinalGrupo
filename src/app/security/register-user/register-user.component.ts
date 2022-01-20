@@ -23,28 +23,16 @@ export class RegisterUserComponent implements OnInit {
   }
 
   ngOnInit() {
-    // const fa = new FormArray([]);
-    // this.model.roles.forEach(r => fa.push(
-    //   new FormGroup({ role: new FormControl(r.role , Validators.required) })
-    // ));
     this.miForm = new FormGroup({
-      idUsuario: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(20), Validators.email]),
-      nombre: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(20)]),
+      email: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(20), Validators.email]),
+      name: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(20)]),
+      lastName: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(20)]),
       password: new FormGroup({
         passwordValue: new FormControl('', [Validators.required, Validators.minLength(2)]),
         passwordConfirm: new FormControl('', Validators.minLength(2)),
       }, this.passwordMatchValidator()),
       roles: new FormArray([])
     });
-    // for (const name in this.miForm.controls) {
-    //   if (this.miForm.controls[name] instanceof FormControl) {
-    //     this.miForm.controls[name].valueChanges.subscribe(
-    //       data => { this.formatErrorMessage(this.miForm.controls[name] as FormControl); }
-    //     );
-    //     // this.formatErrorMessage(this.miForm.controls[name] as FormControl);
-    //     this.miForm.controls[name].setValue(this.miForm.controls[name].value)
-    //   }
-    // }
   }
   public getErrorMessage(name: string): string {
     let cntr = this.miForm.get(name)
@@ -63,7 +51,7 @@ export class RegisterUserComponent implements OnInit {
             break;
           case 'pattern':
           case 'email':
-            msg += 'El formato no es correcto. ';
+            msg += 'El formato del e-mail no es correcto. ';
             break;
           case 'min':
             msg += `El valor debe ser mayor o igual a ${cntr.errors[err].min}. `;
@@ -125,9 +113,10 @@ export class RegisterUserComponent implements OnInit {
   send(): void {
     const data = this.miForm.value;
     this.model = ({
-      idUsuario: data.idUsuario,
+      email: data.email,
+      name: data.name,
+      lastName: data.lastName,
       password: data.password.passwordValue,
-      nombre: data.nombre,
       roles: data.roles
     } as User);
     this.dao.add(this.model).subscribe(
