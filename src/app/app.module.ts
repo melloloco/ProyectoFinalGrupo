@@ -17,6 +17,7 @@ import { AuthInterceptor, SecurityModule } from './security';
 import { CommonServicesModule } from './common-services';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CatalogoComponent } from './catalogo/catalogo.component';
+import { PizzasModule } from './pizzas';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
@@ -27,7 +28,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   imports: [
     BrowserModule, FormsModule, HttpClientModule,
     MainModule, CommonServicesModule, CommonComponentModule, SecurityModule, MyCoreModule,
-    AppRoutingModule,
+    AppRoutingModule, PizzasModule,
     FontAwesomeModule,
   ],
   providers: [
