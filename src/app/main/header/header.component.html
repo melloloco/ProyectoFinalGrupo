@@ -1,25 +1,37 @@
-<header>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" routerLink="/"><img src="assets/logo.svg" width="120" alt="Logotipo"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" routerLink="/inicio" ><i class="fas fa-book"></i> inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" routerLink="/catalogo" ><i class="fas fa-book"></i> catalogo</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" routerLink="/user-choice" ><i class="fas fa-book"></i> usuario</a>
-          </li>
-        </ul>
-      <app-login></app-login>
+<div class="wrapper row1">
+  <header id="header" class="hoc clear">
+    <div id="logo" class="fl_left">
+
+        <h1 class="logoname"><a href="index.html">
+          <img id="Logo" src="assets/1483.jpg" alt="logo de la empresa">
+          </a></h1>
+
       </div>
-    </div>
-  </nav>
-</header>
+    <nav id="mainav" class="fl_right">
+
+        <ul class="clear">
+        <li class="active"><a href="index.html">Home</a></li>
+
+        <li><a class="drop" href="#">Pizzas</a>
+          <ul>
+            <li><a href="#">formulario</a></li>
+            <li><a class="drop" href="#"> Nuestras Pizzas</a>
+              <ul>
+                <li><a href="#">Carbonara</a></li>
+                <li><a href="#">Cuatro Quesos</a></li>
+                <li><a href="#">Siciliana</a></li>
+              </ul>
+            </li>
+            <li><a href="#">
+            </a>
+          </li>
+          </ul>
+        </li>
+        <li><a href="#">  <img id="iconoUsuario"src="assets/iconoUsuario.svg" alt="Icono usuario" ></a></li>
+        <li><a href="#">Prueba 2</a></li>
+        <li><a href="#">Prueba 3</a></li>
+      </ul>
+
+      </nav>
+  </header>
+</div>

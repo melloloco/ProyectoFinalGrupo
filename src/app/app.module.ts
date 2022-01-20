@@ -18,7 +18,6 @@ import { CommonServicesModule } from './common-services';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CatalogoComponent } from './catalogo/catalogo.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { RegisterUserComponent } from './security/register-user/register-user.component';
 
 @NgModule({
   declarations: [
