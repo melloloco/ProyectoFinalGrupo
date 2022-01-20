@@ -63,7 +63,7 @@ export class RegisterUserComponent implements OnInit {
             break;
           case 'pattern':
           case 'email':
-            msg += 'El formato no es correcto. ';
+            msg += 'El formato del e-mail no es correcto. ';
             break;
           case 'min':
             msg += `El valor debe ser mayor o igual a ${cntr.errors[err].min}. `;
@@ -125,9 +125,10 @@ export class RegisterUserComponent implements OnInit {
   send(): void {
     const data = this.miForm.value;
     this.model = ({
-      idUsuario: data.idUsuario,
+      email: data.email,
+      name: data.name,
+      lastName: data.lastName,
       password: data.password.passwordValue,
-      nombre: data.nombre,
       roles: data.roles
     } as User);
     this.dao.add(this.model).subscribe(

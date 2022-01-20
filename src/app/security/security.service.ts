@@ -102,9 +102,10 @@ export class Role {
   role: string = '';
 }
 export class User {
-  idUsuario: string = '';
+  email: string = '';
+  name: string = '';
+  lastName: string = '';
   password: string = '';
-  nombre: string = '';
   roles: Array<Role> = [];
 
 }
