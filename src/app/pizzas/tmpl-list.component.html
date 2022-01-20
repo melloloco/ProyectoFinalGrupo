@@ -17,8 +17,8 @@
             <div class="col-md-2">
               <img
                 class="rounded-circle float-left"
-                src="{{ item.avatar }}"
-                alt="Foto de {{ item.nombre }} {{ item.apellidos }}"
+                src="{{ item.foto }}"
+                alt="Foto de {{ item.nombre }}"
                 width="75"
                 height="75"
               />
@@ -29,10 +29,9 @@
                 class="btn btn-link btn-lg px-0"
                 (click)="VM.view(item.id)"
               >
-                {{ item.tratamiento }} {{ item.nombre }} {{ item.apellidos }}
+                {{ item.nombre }}
               </button>
               <br />
-              <b>Tlfn.:</b> {{ item.telefono }} <b>Correo:</b> {{ item.email }}
             </div>
           </div>
         </div>

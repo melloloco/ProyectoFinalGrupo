@@ -52,8 +52,7 @@ describe('PizzasDAOService', () => {
       },
       data => { fail(); }
     );
-    // const req = httpMock.expectOne('http://localhost:4321/pizzas');
-    const req = httpMock.expectOne('/api/pizzas');
+    const req = httpMock.expectOne('/pizzas');
     expect(req.request.method).toEqual('GET');
     req.flush([
       {"id":1,"tratamiento":"Sra.","nombre":"Marline","apellidos":"Lockton Jerrans","telefono":"846 054 444","email":"mjerrans0@de.vu","sexo":"M","nacimiento":"1973-07-09","avatar":"https://randomuser.me/api/portraits/women/1.jpg","conflictivo":true},
@@ -67,8 +66,7 @@ describe('PizzasDAOService', () => {
   it('change', inject([PizzasDAOService, HttpTestingController], (dao: PizzasDAOService, httpMock: HttpTestingController) => {
     let item = {id:1, nombre:"Pepito",apellido:"Grillo"};
     dao.change(1, item).subscribe(() => { });
-    // const req = httpMock.expectOne('http://localhost:4321/pizzas');
-    const req = httpMock.expectOne('/api/pizzas/1');
+    const req = httpMock.expectOne('/pizzas/1');
     expect(req.request.method).toEqual('PUT');
     expect(req.request.body.id).toEqual(1);
     expect(req.request.body.nombre).toEqual('Pepito');
