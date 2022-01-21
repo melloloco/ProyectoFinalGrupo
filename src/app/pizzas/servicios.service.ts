@@ -9,11 +9,10 @@ import { NavigationService, NotificationService } from '../common-services';
 import { AuthService, AUTH_REQUIRED } from '../security';
 
 export class Pizzas {
-  id: number = 0;
+  id: String = '';
   name: String | null = null;
   price: number | null = null;
   image: String | null = null;
-  ingredientes: number | null = null;
 }
 
 @Injectable({
@@ -23,18 +22,11 @@ export class PizzasDAOService extends RESTDAOService<any, any> {
   constructor(http: HttpClient) {
     super(http, 'pizzas', { context: new HttpContext().set(AUTH_REQUIRED, true) });
   }
-  page(page: number, size: number = 1): Observable<{ page: number, pages: number, size: number, list: Array<any> }> {
+  page(page: number, rows: number = 20): Observable<{ page: number, pages: number, rows: number, list: Array<any> }> {
     return new Observable(subscriber => {
-      this.http.get<{ pages: number, size: number }>(`${this.baseUrl}?_page=count&_size=${size}`, this.option)
+      this.http.get<{[key: string]: any;}>(`${this.baseUrl}?page=${page}&size=${rows}`, this.option)
         .subscribe({
-          next: data => {
-            if (page >= data.pages) page = data.pages > 0 ? data.pages - 1 : 0;
-            this.http.get<Array<any>>(`${this.baseUrl}?_page=${page}&_size=${size}&_sort=nombre`, this.option)
-              .subscribe({
-                next: lst => subscriber.next({ page, pages: data.pages, size: data.size, list: lst }),
-                error: err => subscriber.error(err)
-              })
-          },
+          next: data => subscriber.next({ page: data['number'], pages: data['totalPages'], rows: data['totalElements'], list: data['content']}),
           error: err => subscriber.error(err)
         })
     })
@@ -47,7 +39,7 @@ export class PizzasDAOService extends RESTDAOService<any, any> {
 export class PizzasViewModelService {
   protected modo: ModoCRUD = 'list';
   protected listado: Array<any> = [];
-  protected elemento: any = {};
+  protected elemento: any = { ingredients: []};
   protected idOriginal: any = null;
   protected listURL = '/pizzas';
 
@@ -70,7 +62,7 @@ export class PizzasViewModelService {
   }
 
   public add(): void {
-    this.elemento = {};
+    this.elemento = { ingredients: []};
     this.modo = 'add';
   }
   public edit(key: any): void {
@@ -102,7 +94,7 @@ export class PizzasViewModelService {
   }
 
   public cancel(): void {
-    this.elemento = {};
+    this.elemento = { ingredients: []};
     this.idOriginal = null;
     // this.list();
     // this.load(this.page)
@@ -138,19 +130,32 @@ export class PizzasViewModelService {
 
   page = 0;
   totalPages = 0;
-  totalSize = 0;
-  sizePerPage = 8;
+  totalRows = 0;
+  rowsPerPage = 5;
   load(page: number = -1) {
     if(page < 0) page = this.page
-    this.dao.page(page, this.sizePerPage).subscribe({
+    this.dao.page(page, this.rowsPerPage).subscribe({
       next: rslt => {
         this.page = rslt.page;
         this.totalPages = rslt.pages;
-        this.totalSize = rslt.size;
+        this.totalRows = rslt.rows;
         this.listado = rslt.list;
         this.modo = 'list';
       },
       error: err => this.notify.add(err.message)
     })
+  }
+
+  addIngredient(idIngredient: string){
+    this.elemento.ingredients.push(idIngredient);
+
+  }
+
+  removeIngredient(index: number) {
+    if (index < 0 || index >= this.elemento.ingredients.length) {
+      this.out.error('Index out of range.');
+      return;
+    }
+    this.elemento.ingredients.splice(index, 1);
   }
 }

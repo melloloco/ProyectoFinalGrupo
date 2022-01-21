@@ -7,14 +7,14 @@
   </div>
   <div class="form-group">
     <label>Nombre: </label>
-    <input class="form-control" [class.is-invalid]="miForm?.get('name')?.invalid" type="text"
-      formControlName="name">
+    <input class="form-control" [class.is-invalid]="miForm?.get('firstname')?.invalid" type="text"
+      formControlName="firstname">
     <span class="invalid-feedback">{{getErrorMessage('name')}}</span>
   </div>
   <div class="form-group">
     <label>Apellidos: </label>
-    <input class="form-control" [class.is-invalid]="miForm?.get('lastName')?.invalid" type="text"
-      formControlName="lastName">
+    <input class="form-control" [class.is-invalid]="miForm?.get('lastname')?.invalid" type="text"
+      formControlName="lastname">
     <span class="invalid-feedback">{{getErrorMessage('lastName')}}</span>
   </div>
   <fieldset formGroupName="password">

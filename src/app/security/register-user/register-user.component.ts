@@ -23,31 +23,19 @@ export class RegisterUserComponent implements OnInit {
   }
 
   ngOnInit() {
-    // const fa = new FormArray([]);
-    // this.model.roles.forEach(r => fa.push(
-    //   new FormGroup({ role: new FormControl(r.role , Validators.required) })
-    // ));
     this.miForm = new FormGroup({
-      idUsuario: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(20), Validators.email]),
-      nombre: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(20)]),
+      firstname: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(20)]),
+      lastname: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(20)]),
+      email: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(20), Validators.email]),
       password: new FormGroup({
         passwordValue: new FormControl('', [Validators.required, Validators.minLength(2)]),
         passwordConfirm: new FormControl('', Validators.minLength(2)),
       }, this.passwordMatchValidator()),
-      roles: new FormArray([])
+      rol: new FormArray([])
     });
-    // for (const name in this.miForm.controls) {
-    //   if (this.miForm.controls[name] instanceof FormControl) {
-    //     this.miForm.controls[name].valueChanges.subscribe(
-    //       data => { this.formatErrorMessage(this.miForm.controls[name] as FormControl); }
-    //     );
-    //     // this.formatErrorMessage(this.miForm.controls[name] as FormControl);
-    //     this.miForm.controls[name].setValue(this.miForm.controls[name].value)
-    //   }
-    // }
   }
-  public getErrorMessage(name: string): string {
-    let cntr = this.miForm.get(name)
+  public getErrorMessage(firstname: string): string {
+    let cntr = this.miForm.get(firstname)
     let msg = '';
     if (cntr)
       for (let err in cntr.errors) {
@@ -125,11 +113,11 @@ export class RegisterUserComponent implements OnInit {
   send(): void {
     const data = this.miForm.value;
     this.model = ({
+      firstname: data.firstname,
+      lastname: data.lastname,
       email: data.email,
-      name: data.name,
-      lastName: data.lastName,
       password: data.password.passwordValue,
-      roles: data.roles
+      rol: data.roles
     } as User);
     this.dao.add(this.model).subscribe(
       rslt => {

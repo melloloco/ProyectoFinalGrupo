@@ -102,12 +102,11 @@ export class Role {
   role: string = '';
 }
 export class User {
+  firstname: string = '';
+  lastname: string = '';
   email: string = '';
-  name: string = '';
-  lastName: string = '';
   password: string = '';
-  roles: Array<Role> = [];
-
+  rol: Array<Role> = [];
 }
 
 @Injectable({providedIn: 'root'})

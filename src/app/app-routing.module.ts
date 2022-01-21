@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'inicio', component: HomeComponent, data: {pageTitle:'Inicio'}},
   { path: 'catalogo', component: CatalogoComponent, data: {pageTitle:'Catalogo'}},
   { path: 'pizzas', component: PizzasListComponent},
-  { path: 'pizzas/add', component: PizzasAddComponent, canActivate: [ AuthGuard ]},
+  { path: 'pizzas/add', component: PizzasAddComponent/*, canActivate: [ AuthGuard ]*/},
   { path: 'pizzas/:id/edit', component: PizzasEditComponent},
   { path: 'pizzas/:id', component: PizzasViewComponent},
   { path: 'pizzas/:id/:kk', component: PizzasViewComponent},
