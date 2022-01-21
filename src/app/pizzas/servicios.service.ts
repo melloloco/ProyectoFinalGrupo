@@ -9,11 +9,11 @@ import { NavigationService, NotificationService } from '../common-services';
 import { AuthService, AUTH_REQUIRED } from '../security';
 
 export class Pizzas {
-  id: number = 0;
+  id: String = '';
   name: String | null = null;
   price: number | null = null;
   image: String | null = null;
-  ingredientes: number | null = null;
+  ingredients: Array<number> | null = null;
 }
 
 @Injectable({
@@ -23,15 +23,15 @@ export class PizzasDAOService extends RESTDAOService<any, any> {
   constructor(http: HttpClient) {
     super(http, 'pizzas', { context: new HttpContext().set(AUTH_REQUIRED, true) });
   }
-  page(page: number, size: number = 1): Observable<{ page: number, pages: number, size: number, list: Array<any> }> {
+  page(page: number, rows: number = 1): Observable<{ page: number, pages: number, rows: number, list: Array<any> }> {
     return new Observable(subscriber => {
-      this.http.get<{ pages: number, size: number }>(`${this.baseUrl}?_page=count&_size=${size}`, this.option)
+      this.http.get<{ pages: number, rows: number }>(`${this.baseUrl}?page=1&rows=${rows}`, this.option)
         .subscribe({
           next: data => {
             if (page >= data.pages) page = data.pages > 0 ? data.pages - 1 : 0;
-            this.http.get<Array<any>>(`${this.baseUrl}?_page=${page}&_size=${size}&_sort=nombre`, this.option)
+            this.http.get<Array<any>>(`${this.baseUrl}?page=${page}&rows=${rows}&_sort=nombre`, this.option)
               .subscribe({
-                next: lst => subscriber.next({ page, pages: data.pages, size: data.size, list: lst }),
+                next: lst => subscriber.next({ page, pages: data.pages, rows: data.rows, list: lst }),
                 error: err => subscriber.error(err)
               })
           },
@@ -138,15 +138,15 @@ export class PizzasViewModelService {
 
   page = 0;
   totalPages = 0;
-  totalSize = 0;
-  sizePerPage = 8;
+  totalRows = 0;
+  rowsPerPage = 5;
   load(page: number = -1) {
     if(page < 0) page = this.page
-    this.dao.page(page, this.sizePerPage).subscribe({
+    this.dao.page(page, this.rowsPerPage).subscribe({
       next: rslt => {
         this.page = rslt.page;
         this.totalPages = rslt.pages;
-        this.totalSize = rslt.size;
+        this.totalRows = rslt.rows;
         this.listado = rslt.list;
         this.modo = 'list';
       },

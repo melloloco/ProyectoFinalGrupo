@@ -4,20 +4,15 @@
       <div class="well well-sm">
           <div class="row">
               <div class="col-sm-6 col-md-4">
-                  <img src="{{VM.Elemento.avatar}}"
-                        alt="Foto de {{VM.Elemento.nombre}} {{VM.Elemento.apellidos}}" class="rounded" />
+                  <img src="{{VM.Elemento.image}}"
+                        alt="Imagen de {{VM.Elemento.name}}" class="rounded" />
               </div>
               <div class="col-sm-6 col-md-8">
-                  <h4>{{VM.Elemento.tratamiento}} {{VM.Elemento.nombre}} {{VM.Elemento.apellidos}}</h4>
-                  <p [hidden]="!VM.Elemento.conflictivo"><small class="text-danger">
-                        <i class="fas fa-skull-crossbones mr-2"></i>Persona conflictiva</small></p>
+                  <h4>{{VM.Elemento.name}}</h4>
                   <p>
-                      <i class="fas fa-phone-alt mr-2"></i>{{VM.Elemento.telefono}}
+                      <i class="fas fa-money-bill mr-2"> Precio:</i> {{VM.Elemento.price}}€
                       <br />
-                      <i class="fas fa-envelope mr-2"></i>
-                        <a href="mailto:{{VM.Elemento.email}}">{{VM.Elemento.email}}</a>
-                      <br />
-                      <i class="fas fa-gifts mr-2"></i>{{VM.Elemento.nacimiento | date:'dd/MMMM/yyyy'}}
+                      <i class="fas fa-list mr-2"> Ingredientes:</i> {{VM.Elemento.ingredients}}
                   </p>
                   <div class="btn-group">
                       <button type="button" class="btn btn-primary">

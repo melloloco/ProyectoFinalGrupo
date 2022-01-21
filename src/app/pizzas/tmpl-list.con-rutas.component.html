@@ -13,21 +13,20 @@
         <div class="container">
           <div class="row">
             <div class="col-md-2">
-              <img class="rounded-circle float-left" src="{{item.avatar}}"
-                alt="Foto de {{item.nombre}} {{item.apellidos}}" width="75" height="75">
+              <img class="rounded-circle float-left" src="../../assets/barbacoa2.jpg"
+                alt="Foto de {{item.name}}" width="75" height="75">
             </div>
             <div class="col-md-10">
-              <a class="btn btn-link btn-lg px-0" routerLink="{{item.id}}/{{item.nombre}}-{{item.apellidos}}">
-                {{item.tratamiento}} {{item.nombre}} {{item.apellidos}}</a>
+              <a class="btn btn-link btn-lg px-0" routerLink="{{item.id}}/{{item.name}}">
+                {{item.name}} {{item.price}}€</a>
               <br>
-              <b>Tlfn.:</b> {{item.telefono}} <b>Correo:</b> {{item.email}}
             </div>
           </div>
         </div>
       </td>
       <td class="align-middle text-end">
         <div class="btn-group" role="group">
-          <button class="btn btn-info" routerLink="{{item.id}}/{{item.nombre}}-{{item.apellidos}}">
+          <button class="btn btn-info" routerLink="{{item.id}}/{{item.name}}">
             <i class="fas fa-eye"></i></button>
           <button class="btn btn-success" [routerLink]="[item.id, 'edit']"><i class="fas fa-pen"></i></button>
           <button class="btn btn-danger" (click)="VM.delete(item.id)"><i class="far fa-trash-alt"></i></button>
@@ -36,5 +35,5 @@
     </tr>
   </tbody>
 </table>
-<p-paginator [first]="VM.sizePerPage*VM.page" [rows]="VM.sizePerPage" [totalRecords]="VM.totalSize"
+<p-paginator [first]="VM.rowsPerPage*VM.page" [rows]="VM.rowsPerPage" [totalRecords]="VM.totalRows"
     [pageLinkSize]="5" (onPageChange)="VM.load($event.page)"></p-paginator>

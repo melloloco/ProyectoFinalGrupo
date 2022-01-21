@@ -107,7 +107,7 @@ export class PizzasEditComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.obs$ = this.route.paramMap.subscribe(
       (params: ParamMap) => {
-        const id = parseInt(params?.get('id') ?? '');
+        const id = String(params?.get('id') ?? '');
         if (id) {
           this.vm.edit(id);
         } else {
@@ -133,7 +133,7 @@ export class PizzasViewComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.obs$ = this.route.paramMap.subscribe(
       (params: ParamMap) => {
-        const id = parseInt(params?.get('id') ?? '');
+        const id = String(params?.get('id') ?? '');
         if (id) {
           this.vm.view(id);
         } else {
