@@ -23,18 +23,11 @@ export class PizzasDAOService extends RESTDAOService<any, any> {
   constructor(http: HttpClient) {
     super(http, 'pizzas', { context: new HttpContext().set(AUTH_REQUIRED, true) });
   }
-  page(page: number, rows: number = 1): Observable<{ page: number, pages: number, rows: number, list: Array<any> }> {
+  page(page: number, rows: number = 20): Observable<{ page: number, pages: number, rows: number, list: Array<any> }> {
     return new Observable(subscriber => {
-      this.http.get<{ pages: number, rows: number }>(`${this.baseUrl}?page=1&rows=${rows}`, this.option)
+      this.http.get<{[key: string]: any;}>(`${this.baseUrl}?page=${page}&size=${rows}`, this.option)
         .subscribe({
-          next: data => {
-            if (page >= data.pages) page = data.pages > 0 ? data.pages - 1 : 0;
-            this.http.get<Array<any>>(`${this.baseUrl}?page=${page}&rows=${rows}&_sort=nombre`, this.option)
-              .subscribe({
-                next: lst => subscriber.next({ page, pages: data.pages, rows: data.rows, list: lst }),
-                error: err => subscriber.error(err)
-              })
-          },
+          next: data => subscriber.next({ page: data['number'], pages: data['totalPages'], rows: data['totalElements'], list: data['content']}),
           error: err => subscriber.error(err)
         })
     })
