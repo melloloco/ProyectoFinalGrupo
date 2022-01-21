@@ -15,14 +15,17 @@
     </div>
     <div class="form-group col-md-2">
       <label class="form-label" for="ingredient">Ingredientes:</label>
-      <select class="form-control form-select" name="ingredient" id="ingredient" [(ngModel)]="VM.Elemento.ingredients"
-        #ingredient="ngModel">
-        <option>88181312-6029-466e-a722-28e41d78abee</option>
-        <option>78b6bdcc-e55b-4c17-890a-0a8f26e7506d</option>
-        <option>6ac1c7b2-0f70-4512-8573-3eb9f97e5c0f</option>
-        <option>ce881929-cfad-41d8-831c-bbf56d52a95b</option>
-        <option>ef9ee7fb-cee2-48c1-965c-c5d6d64bcfa2</option>
+      <select class="form-control form-select" name="ingredient" id="ingredient" [(ngModel)]="VM.Elemento.idIngredient">
+        <option value="88181312-6029-466e-a722-28e41d78abee">gorgonzola</option>
+        <option value="78b6bdcc-e55b-4c17-890a-0a8f26e7506d">carne</option>
       </select>
+      <button class="btn btn-info" (click)="VM.addIngredient(VM.Elemento.idIngredient)">
+        <i class="fas fa-check">Añadir</i></button>
+      <ul *ngFor="let item of VM.Elemento.ingredients">
+        <li>
+          {{item}} <button class="btn btn-danger" (click)="VM.removeIngredient(item)"><i class="fas fa-times"></i></button>
+        </li>
+      </ul>
     </div>
   </div>
   <div class="form-group row">

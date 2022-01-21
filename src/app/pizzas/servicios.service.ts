@@ -13,7 +13,6 @@ export class Pizzas {
   name: String | null = null;
   price: number | null = null;
   image: String | null = null;
-  ingredients: Array<number> | null = null;
 }
 
 @Injectable({
@@ -40,7 +39,7 @@ export class PizzasDAOService extends RESTDAOService<any, any> {
 export class PizzasViewModelService {
   protected modo: ModoCRUD = 'list';
   protected listado: Array<any> = [];
-  protected elemento: any = {};
+  protected elemento: any = { ingredients: []};
   protected idOriginal: any = null;
   protected listURL = '/pizzas';
 
@@ -63,7 +62,7 @@ export class PizzasViewModelService {
   }
 
   public add(): void {
-    this.elemento = {};
+    this.elemento = { ingredients: []};
     this.modo = 'add';
   }
   public edit(key: any): void {
@@ -95,7 +94,7 @@ export class PizzasViewModelService {
   }
 
   public cancel(): void {
-    this.elemento = {};
+    this.elemento = { ingredients: []};
     this.idOriginal = null;
     // this.list();
     // this.load(this.page)
@@ -145,5 +144,18 @@ export class PizzasViewModelService {
       },
       error: err => this.notify.add(err.message)
     })
+  }
+
+  addIngredient(idIngredient: string){
+    this.elemento.ingredients.push(idIngredient);
+
+  }
+
+  removeIngredient(index: number) {
+    if (index < 0 || index >= this.elemento.ingredients.length) {
+      this.out.error('Index out of range.');
+      return;
+    }
+    this.elemento.ingredients.splice(index, 1);
   }
 }
