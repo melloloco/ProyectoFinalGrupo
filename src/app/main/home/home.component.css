@@ -177,10 +177,10 @@ input:focus, textarea:focus, *:required:focus{border-color:#97A9BD !important;}
 #header #logo a{color:inherit;}
 
 /* Shout / Debajo de las dos imagenes grandes*/
-.shout figure{display:block; max-width:546px;/* same width as the image - contains the caption */}
-.shout figure figcaption{display:block; position:relative;}
-.shout figure figcaption a{display:block; position:relative; padding:15px; border:solid; border-width:0 1px 1px 1px;}
-.shout figure figcaption a::after{position:absolute; top:12px; right:15px; width:30px; height:30px; line-height:30px; font-family:"Font Awesome\ 5 Free"; font-weight:900; content:"\f105";/* fa-angle-right */ text-align:center; border-radius:50%;}
+one_half, .shout figure{display:block; max-width:546px;/* same width as the image - contains the caption */}
+one_half, .shout figure figcaption{display:block; position:relative;}
+one_half, .shout figure figcaption a{display:block; position:relative; padding:15px; border:solid; border-width:0 1px 1px 1px;}
+one_half, .shout figure figcaption a::after{position:absolute; top:12px; right:15px; width:30px; height:30px; line-height:30px; font-family:"Font Awesome\ 5 Free"; font-weight:900; content:"\f105";/* fa-angle-right */ text-align:center; border-radius:50%;}
 
 
 /* Page Intro */
@@ -204,9 +204,9 @@ input:focus, textarea:focus, *:required:focus{border-color:#97A9BD !important;}
 #introblocks .elements li:nth-child(4) article, #introblocks .elements li:nth-child(4) article:hover a i{background-color:#97BDAB;}/* Green */
 #introblocks .elements li:nth-child(4) article a i{color:#97BDAB;}
 
-.shout figure figcaption a{color:inherit; background-color:inherit; border-color:#D7D7D7;}
-.shout figure:hover figcaption a, .shout figure figcaption a::after{color:#FFFFFF; background-color:#97A9BD; border-color:#97A9BD;}
-.shout figure:hover figcaption a::after{color:#97A9BD; background-color:#FFFFFF;}
+one_half, .shout figure figcaption a{color:inherit; background-color:inherit; border-color:#D7D7D7;}
+one_half, .shout figure:hover figcaption a, one_half, .shout figure figcaption a::after{color:#FFFFFF; background-color:#97A9BD; border-color:#97A9BD;}
+one_half, .shout figure:hover figcaption a::after{color:#97A9BD; background-color:#FFFFFF;}
 
 .team figure figcaption{color:#474747; background-color:#FFFFFF; border-color:#D7D7D7;}
 
@@ -302,10 +302,10 @@ input:focus, textarea:focus, *:required:focus{border-color:#97A9BD !important;}
 	#pageintro .heading{font-size:2rem;}
 
 	.sectiontitle{max-width:none;}
-	.shout figure, .team li, #latest > li{margin:0 auto 50px;}
+	one_half, .shout figure, .team li, #latest > li{margin:0 auto 50px;}
 	.team li, #latest li{max-width:348px;}
 	.elements-three li:nth-last-child(-n+3), .elements-four li:nth-last-child(-n+4){margin-bottom:50px;}
-	.elements-three li:last-child, .elements-four li:last-child, .shout figure:last-child{margin-bottom:0;}
+	.elements-three li:last-child, .elements-four li:last-child, one_half, one_half, .shout figure:last-child{margin-bottom:0;}
 
 	#ctdetails figure{margin-bottom:80px;}
 
