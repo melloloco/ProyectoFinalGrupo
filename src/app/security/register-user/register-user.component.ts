@@ -24,18 +24,18 @@ export class RegisterUserComponent implements OnInit {
 
   ngOnInit() {
     this.miForm = new FormGroup({
+      firstname: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(20)]),
+      lastname: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(20)]),
       email: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(20), Validators.email]),
-      name: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(20)]),
-      lastName: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(20)]),
       password: new FormGroup({
         passwordValue: new FormControl('', [Validators.required, Validators.minLength(2)]),
         passwordConfirm: new FormControl('', Validators.minLength(2)),
       }, this.passwordMatchValidator()),
-      roles: new FormArray([])
+      rol: new FormArray([])
     });
   }
-  public getErrorMessage(name: string): string {
-    let cntr = this.miForm.get(name)
+  public getErrorMessage(firstname: string): string {
+    let cntr = this.miForm.get(firstname)
     let msg = '';
     if (cntr)
       for (let err in cntr.errors) {
@@ -113,11 +113,11 @@ export class RegisterUserComponent implements OnInit {
   send(): void {
     const data = this.miForm.value;
     this.model = ({
+      firstname: data.firstname,
+      lastname: data.lastname,
       email: data.email,
-      name: data.name,
-      lastName: data.lastName,
       password: data.password.passwordValue,
-      roles: data.roles
+      rol: data.roles
     } as User);
     this.dao.add(this.model).subscribe(
       rslt => {
