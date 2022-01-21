@@ -164,7 +164,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#97A9BD !important;}
 .imgover:hover::before{background-color:rgba(151,169,189,.5);}
 .imgover, .imgover:hover::after{color:#FFFFFF;}
 
-.logoname a{color:#FFFFFF;}
+.logoname a{color:#f1eded;}
 .logoname::first-letter, .logoname span{color:#97BDAB;}
 
 
