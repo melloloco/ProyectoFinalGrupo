@@ -124,7 +124,11 @@ input:focus, textarea:focus, *:required:focus{border-color:#97A9BD !important;}
 /* Footer */
 #footer .heading{color:#FFFFFF;}
 #footer hr, #footer .borderedbox, #footer .linklist li{border-color:rgba(255,255,255,.1);}
-
+#LogoFooter{
+  width: 60px;
+  height: 60px;
+  border-radius:15px;
+}
 
 
 /* Media Queries

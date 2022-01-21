@@ -293,10 +293,10 @@ input:focus, textarea:focus, *:required:focus{border-color:#97A9BD !important;}
 	#pageintro .heading{font-size:2rem;}
 
 	.sectiontitle{max-width:none;}
-	.shout figure, .team li, #latest > li{margin:0 auto 50px;}
+	one_half, .shout figure, .team li, #latest > li{margin:0 auto 50px;}
 	.team li, #latest li{max-width:348px;}
 	.elements-three li:nth-last-child(-n+3), .elements-four li:nth-last-child(-n+4){margin-bottom:50px;}
-	.elements-three li:last-child, .elements-four li:last-child, .shout figure:last-child{margin-bottom:0;}
+	.elements-three li:last-child, .elements-four li:last-child, one_half, one_half, .shout figure:last-child{margin-bottom:0;}
 
 	#ctdetails figure{margin-bottom:80px;}
 
