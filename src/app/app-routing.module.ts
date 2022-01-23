@@ -8,6 +8,7 @@ import { LoginComponent } from './security/login/login.component';
 import { UserComponent } from './security/user/user.component';
 import { AuthGuard } from './security';
 import { LoginEmployeComponent } from './security/login-employe/login-employe.component';
+import { IngredientesComponent } from './Ingredientes/ingredientes.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full'},
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'pizzas/:id/edit', component: PizzasEditComponent},
   { path: 'pizzas/:id', component: PizzasViewComponent},
   { path: 'pizzas/:id/:kk', component: PizzasViewComponent},
+  { path: 'ingredientes', component: IngredientesComponent},
   { path: 'registro', component: RegisterUserComponent, data: {pageTitle:'registro'}},
   { path: 'user', component: UserComponent, data: {pageTitle:'Iniciar sesion'}},
   { path: 'login', component: LoginComponent, data: {pageTitle:'login'}},
