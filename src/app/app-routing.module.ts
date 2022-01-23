@@ -8,12 +8,18 @@ import { LoginComponent } from './security/login/login.component';
 import { UserComponent } from './security/user/user.component';
 import { AuthGuard } from './security';
 import { LoginEmployeComponent } from './security/login-employe/login-employe.component';
+import { IngredientesAddComponent, IngredientesEditComponent, IngredientesListComponent, IngredientesViewComponent } from './Ingredientes';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full'},
   { path: 'inicio', component: HomeComponent, data: {pageTitle:'Inicio'}},
   { path: 'catalogo', component: CatalogoComponent, data: {pageTitle:'Catalogo'}},
   { path: 'pizzas', component: PizzasListComponent},
+  { path: 'ingredientes', component: IngredientesListComponent},
+  { path: 'ingredientes/add', component: IngredientesAddComponent/*, canActivate: [ AuthGuard ]*/},
+  { path: 'ingredientes/:id/edit', component: IngredientesEditComponent},
+  { path: 'ingredientes/:id', component: IngredientesViewComponent},
+  { path: 'ingredientes/:id/:kk', component: IngredientesViewComponent},
   { path: 'pizzas/add', component: PizzasAddComponent/*, canActivate: [ AuthGuard ]*/},
   { path: 'pizzas/:id/edit', component: PizzasEditComponent},
   { path: 'pizzas/:id', component: PizzasViewComponent},

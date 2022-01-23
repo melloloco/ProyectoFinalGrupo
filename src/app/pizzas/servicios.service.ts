@@ -7,7 +7,6 @@ import { RESTDAOService } from '../base-code/RESTDAOService';
 import { ModoCRUD } from '../base-code/tipos';
 import { NavigationService, NotificationService } from '../common-services';
 import { AuthService, AUTH_REQUIRED } from '../security';
-
 export class Pizzas {
   id: String = '';
   name: String | null = null;
@@ -39,6 +38,7 @@ export class PizzasDAOService extends RESTDAOService<any, any> {
 export class PizzasViewModelService {
   protected modo: ModoCRUD = 'list';
   protected listado: Array<any> = [];
+  protected ingredientList: Array<any> = [];
   protected elemento: any = { ingredients: []};
   protected idOriginal: any = null;
   protected listURL = '/pizzas';
@@ -157,5 +157,9 @@ export class PizzasViewModelService {
       return;
     }
     this.elemento.ingredients.splice(index, 1);
+  }
+
+  ingredientsList(Entidad: any){
+    this.ingredientList = Entidad;
   }
 }
