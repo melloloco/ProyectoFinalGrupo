@@ -5,6 +5,7 @@
 /* Header /	Prueba de Front End
 --------------------------------------------------------------------------------------------------------------- */
 
+
 #header #logo{margin:22px 0 0 0;}
 
 
@@ -16,6 +17,15 @@
 #pageintro article p{max-width:65%; line-height:2rem;}
 #pageintro .heading{margin-bottom:20px; font-size:4rem;}
 #pageintro footer{margin-top:50px;}
+
+
+/* Team Members / Pie de ver nuestras pizzas */
+.team li:last-child{margin-bottom:0;}
+.team figure{display:block; text-align:center;}
+.team figure *{margin:0; padding:0;}
+.team figure figcaption{padding:20px 10px; line-height:1; border:solid; border-width:0 1px 1px 1px;}
+.team figure strong{display:block; margin-bottom:8px; font-size:1.4rem; font-weight:400;}
+.team figure em{display:block; font-style:normal; font-size:.8rem;}
 
 
 /* Content Area / Contenedor
@@ -229,6 +239,11 @@ html, body{margin:0; padding:0; font-size:14px; line-height:1.6em;}
 .capitalise{text-transform:capitalize;}
 .hidden{display:none;}
 .nospace{margin:0; padding:0; list-style:none;}
+#nospaceli1:hover{text-decoration: underline;}
+#nospaceli2:hover{text-decoration: underline;}
+#nospaceli3:hover{text-decoration: underline;}
+#nospaceli4:hover{text-decoration: underline;}
+
 .block{display:block;}
 .inline{display:inline-block;}
 .justified{text-align:justify;}
@@ -317,11 +332,18 @@ footer{display:block; margin:0; padding:0;}
 /* Social media
 --------------------------------------------------------------------------------------------------------------- */
 .socialmedia{width: 100%; height: 100%; background-color: inherit;}
-.socialinst{position: relative; padding: 6px 6px; float: left; background-color: inherit;}
-.socialtwit{position: relative; padding: 6px 6px; float: left; background-color: inherit;}
-.socialface{position: relative; padding: 6px 6px; float: left; background-color: inherit;}
-.socialgith{position: relative; padding: 6px 6px; float: left; background-color: inherit;}
-.socialyout{position: relative; padding: 6px 6px; float: left; background-color: inherit;}
+.socialinst{position: relative; padding: 6px 6px; float: left; background-color: inherit; color: white;}
+.socialtwit{position: relative; padding: 6px 6px; float: left; background-color: inherit; color: #00A6E8;}
+.socialface{position: relative; padding: 6px 6px; float: left; background-color: inherit; color: #1873EB;}
+.socialgith{position: relative; padding: 6px 6px; float: left; background-color: inherit; color: white;}
+.socialyout{position: relative; padding: 6px 6px; float: left; background-color: inherit; color: #FF0000;}
+
+.socialinst:hover{position: relative; padding: 6px 6px; float: left; background-color: inherit; color: black;}
+.socialtwit:hover{position: relative; padding: 6px 6px; float: left; background-color: inherit;color: white;}
+.socialface:hover{position: relative; padding: 6px 6px; float: left; background-color: inherit;color: white;}
+.socialgith:hover{position: relative; padding: 6px 6px; float: left; background-color: inherit;color: black;}
+.socialyout:hover{position: relative; padding: 6px 6px; float: left; background-color: inherit;color: white;}
+
 #socialface{font-size: 38px;}
 #socialyout{font-size: 38px;}
 #socialgith{font-size: 38px;}

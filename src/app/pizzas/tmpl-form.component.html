@@ -15,14 +15,14 @@
     </div>
     <div class="form-group col-md-2">
       <label class="form-label" for="ingredient">Ingredientes:</label>
-      <select class="form-control form-select" name="ingredient" id="ingredient" [(ngModel)]="VM.Elemento.Ingredient" *ngFor="let item of VM.Elemento.ingredientList">
-        <option value="{{item.id}}">{{item.name}}</option>
+      <select class="form-control form-select" name="ingredient" id="ingredient" [(ngModel)]="VM.Elemento.Ingredient">
+        <option *ngFor="let item of VM.ingredientes" value="{{item.id}}" >{{item.name | capitalize}}</option>
       </select>
       <button class="btn btn-info" (click)="VM.addIngredient(VM.Elemento.Ingredient)">
         <i class="fas fa-check">Añadir</i></button>
       <ul *ngFor="let item of VM.Elemento.ingredients">
         <li>
-          {{item}} <button class="btn btn-danger" (click)="VM.removeIngredient(item)"><i class="fas fa-times"></i></button>
+          {{VM.getIngrediente(item)['name'] | capitalize}} <button class="btn btn-danger" (click)="VM.removeIngredient(item)"><i class="fas fa-times"></i></button>
         </li>
       </ul>
     </div>
