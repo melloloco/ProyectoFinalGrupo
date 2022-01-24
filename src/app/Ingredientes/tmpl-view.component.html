@@ -1,4 +1,4 @@
-<h1>Pizza</h1>
+<h1>Ingrediente</h1>
 <div class="row">
   <div class="col-xs-12 col-sm-6 col-md-6">
       <div class="well well-sm">
@@ -8,13 +8,14 @@
                         alt="Imagen de {{VM.Elemento.name}}" class="rounded" />
               </div> -->
               <div class="col-sm-6 col-md-8">
-                  <h4>{{VM.Elemento.name}}</h4>
+                  <h4>{{VM.Elemento.name | capitalize}}</h4>
                   <p>
                       <i class="fas fa-money-bill mr-2"> Precio:</i> {{VM.Elemento.price}}€
                       <br />
                       <!-- <i class="fas fa-list mr-2"> Ingredientes:</i> {{VM.Elemento.ingredients}} -->
                   </p>
                   <div class="btn-group">
+                      <button class="btn btn-success" [routerLink]="['edit']"><i class="fas fa-pen"></i></button>
                       <input class="btn btn-secondary" type="button" value="Volver" (click)="VM.cancel()">
                   </div>
               </div>

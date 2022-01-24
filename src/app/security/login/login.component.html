@@ -16,3 +16,12 @@
   Hola {{loginSrv.Name}}
   <input class="btn btn-outline-success btn-sm" type="button" value="Desconectar" (click)="logInOut()">
 </small>
+
+<div class="login-panel" ng-app='materialRipple' >
+  <form>
+    <h3>login</h3>
+    <input type="text" placeholder="email"/> <br />
+    <input type="password" placeholder="password"/> <br />
+    <div ripple ripple-class="ripple" ripple-diameter="50" ripple-stream="true" class="btn-submit">submit</div>
+  </form>
+</div>

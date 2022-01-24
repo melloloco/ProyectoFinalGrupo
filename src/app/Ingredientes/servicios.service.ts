@@ -23,12 +23,15 @@ export class IngredientesDAOService extends RESTDAOService<any, any> {
   }
   page(page: number, rows: number = 20): Observable<{ page: number, pages: number, rows: number, list: Array<any> }> {
     return new Observable(subscriber => {
-      this.http.get<{[key: string]: any;}>(`${this.baseUrl}?page=${page}&size=${rows}`, this.option)
+      this.http.get<{[key: string]: any;}>(`${this.baseUrl}?page=${page}&size=${rows}&sort=name`, this.option)
         .subscribe({
           next: data => subscriber.next({ page: data['number'], pages: data['totalPages'], rows: data['totalElements'], list: data['content']}),
           error: err => subscriber.error(err)
         })
     })
+  }
+  getAll(): Observable<any> {
+    return this.http.get<Array<any>>(this.baseUrl + '?page=0&size=1000&sort=name', this.option);
   }
 }
 

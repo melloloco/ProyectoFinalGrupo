@@ -8,11 +8,18 @@
                         alt="Imagen de {{VM.Elemento.name}}" class="rounded" />
               </div>
               <div class="col-sm-6 col-md-8">
-                  <h4>{{VM.Elemento.name}}</h4>
+                  <h4>{{VM.Elemento.name | capitalize}}</h4>
                   <p>
                       <i class="fas fa-money-bill mr-2"> Precio:</i> {{VM.Elemento.price}}€
-                      <br />
-                      <i class="fas fa-list mr-2"> Ingredientes:</i> {{VM.Elemento.ingredients}}
+                      <br><br>
+                      <i class="fas fa-list mr-2"> Ingredientes:
+                        <br><br>
+                        <ul *ngFor="let item of VM.Elemento.ingredients">
+                          <li>
+                            <a routerLink="/ingredientes/{{item.id}}">{{item.name | capitalize}}</a>
+                          </li>
+                        </ul>
+                      </i>
                   </p>
                   <div class="btn-group">
                       <input class="btn btn-secondary" type="button" value="Volver" (click)="VM.cancel()">

@@ -98,20 +98,16 @@ export class AuthGuard implements CanActivate {
   }
 }
 
-export class Role {
-  role: string = '';
-}
 export class User {
-  firstname: string = '';
-  lastname: string = '';
+  name: string = '';
+  lastName: string = '';
   email: string = '';
   password: string = '';
-  rol: Array<Role> = [];
 }
 
 @Injectable({providedIn: 'root'})
 export class RegisterUserDAO  {
-  private baseUrl = environment.securityApiURL + 'users ';
+  private baseUrl = environment.registerApiUrl
   private options = { withCredentials: true };
 
   constructor(private http: HttpClient) { }
