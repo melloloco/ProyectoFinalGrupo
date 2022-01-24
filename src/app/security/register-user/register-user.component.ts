@@ -24,18 +24,17 @@ export class RegisterUserComponent implements OnInit {
 
   ngOnInit() {
     this.miForm = new FormGroup({
-      firstname: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(20)]),
-      lastname: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(20)]),
+      name: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(20)]),
+      lastName: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(20)]),
       email: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(20), Validators.email]),
       password: new FormGroup({
         passwordValue: new FormControl('', [Validators.required, Validators.minLength(2)]),
         passwordConfirm: new FormControl('', Validators.minLength(2)),
-      }, this.passwordMatchValidator()),
-      rol: new FormArray([])
+      }, this.passwordMatchValidator())
     });
   }
-  public getErrorMessage(firstname: string): string {
-    let cntr = this.miForm.get(firstname)
+  public getErrorMessage(name: string): string {
+    let cntr = this.miForm.get(name)
     let msg = '';
     if (cntr)
       for (let err in cntr.errors) {
@@ -101,7 +100,7 @@ export class RegisterUserComponent implements OnInit {
       }
     }
     cntr.setErrors(Object.assign({}, cntr.errors, { 'customMsg': msg }));
-  }
+  }/*
   addRole(): void {
     (this.miForm.get('roles') as FormArray).push(
       new FormGroup({ role: new FormControl('Usuarios', Validators.required) })
@@ -109,15 +108,15 @@ export class RegisterUserComponent implements OnInit {
   }
   deleteRole(ind: number): void {
     (this.miForm.get('roles') as FormArray).removeAt(ind);
-  }
+  }*/
   send(): void {
     const data = this.miForm.value;
     this.model = ({
-      firstname: data.firstname,
-      lastname: data.lastname,
+      name: data.name,
+      lastName: data.lastName,
       email: data.email,
-      password: data.password.passwordValue,
-      rol: data.roles
+      password: data.password.passwordValue
+      //rol: data.roles
     } as User);
     this.dao.add(this.model).subscribe(
       rslt => {
