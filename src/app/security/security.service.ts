@@ -107,7 +107,7 @@ export class User {
 
 @Injectable({providedIn: 'root'})
 export class RegisterUserDAO  {
-  private baseUrl = environment.apiURL + 'register ';
+  private baseUrl = environment.registerApiUrl
   private options = { withCredentials: true };
 
   constructor(private http: HttpClient) { }

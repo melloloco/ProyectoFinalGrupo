@@ -6,6 +6,7 @@ export const environment = {
   production: false,
   ERROR_LEVEL: 99,
   securityApiURL: 'http://localhost:4321/',
+  registerApiUrl: 'http://localhost:8082/register',
   apiURL: 'http://localhost:8080/',
 };
 
