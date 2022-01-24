@@ -1,6 +1,89 @@
 .main-container{
-height: 500px;
-width: 400px;
-border: 2px solid black;
-
+height: 200px;
+width: 100%;
+background-color: inherit;
 };
+
+ul{
+  position: relative;
+  float: left;
+  width: 100%;
+}
+.ulc{
+  position: relative;
+  top: 30%;
+  width: 100%;
+  height: 200px;
+  background-color: inherit;
+}
+ .btnRegistrarse1{
+  position: relative;
+  width: 32.5%;
+  padding: 10px 10px;
+  color: black;
+  box-shadow: 1.25px 2.5px 2px 2.5px #888888;
+}
+.btnRegistrarse2{
+  position: relative;
+  width: 32.5%;
+  padding: 10px 10px;
+  color: black;
+  box-shadow: 1.25px 2.5px 2px 2.5px #888888;
+}
+.btnRegistrarse3{
+  position: relative;
+  width: 32.5%;
+  padding: 10px 10px;
+  color: black;
+  box-shadow: 1.25px 2.5px 2px 2.5px #888888;
+}
+
+.btnRegistrarse1:hover{
+  color: #c21d17;
+  background-color: #400605;
+}
+.btnRegistrarse2:hover{
+  color: #c21d17;
+  background-color: #400605;
+}
+.btnRegistrarse3:hover{
+  color: #c21d17;
+  background-color: #400605;
+}
+
+
+
+
+.btnRegistrarse1, .btnRegistrarse2, .btnRegistrarse3 {
+  border-radius: 4px;
+  background-color: #97110a;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.btnRegistrarse1 span, .btnRegistrarse2 span, .btnRegistrarse3 span {
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.btnRegistrarse1 span:after, .btnRegistrarse2 span:after, .btnRegistrarse3 span:after {
+  content: '\00bb';
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.btnRegistrarse1:hover span, .btnRegistrarse2:hover span, .btnRegistrarse3:hover span {
+  padding-right: 25px;
+}
+
+.btnRegistrarse1:hover span:after, .btnRegistrarse2:hover span:after, .btnRegistrarse3:hover span:after {
+  opacity: 1;
+  right: 0;
+}

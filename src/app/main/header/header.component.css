@@ -25,11 +25,7 @@
   width: 120px;
   height: 120px;
 }
-#Logo:hover{
-padding-right: 30px;
-  width: 150px;
- height: 140px;
-}
+
 .clear{
   padding: 0 14px;
   font-size: 20px;
