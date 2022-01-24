@@ -6,6 +6,7 @@ import { LoggerService } from 'src/lib/my-core';
 import { RESTDAOService } from '../base-code/RESTDAOService';
 import { ModoCRUD } from '../base-code/tipos';
 import { NavigationService, NotificationService } from '../common-services';
+import { Ingredientes, IngredientesDAOService } from '../Ingredientes/servicios.service';
 import { AuthService, AUTH_REQUIRED } from '../security';
 export class Pizzas {
   id: String = '';
@@ -23,7 +24,7 @@ export class PizzasDAOService extends RESTDAOService<any, any> {
   }
   page(page: number, rows: number = 20): Observable<{ page: number, pages: number, rows: number, list: Array<any> }> {
     return new Observable(subscriber => {
-      this.http.get<{[key: string]: any;}>(`${this.baseUrl}?page=${page}&size=${rows}`, this.option)
+      this.http.get<{[key: string]: any;}>(`${this.baseUrl}?page=${page}&size=${rows}&sort=name`, this.option)
         .subscribe({
           next: data => subscriber.next({ page: data['number'], pages: data['totalPages'], rows: data['totalElements'], list: data['content']}),
           error: err => subscriber.error(err)
@@ -38,13 +39,13 @@ export class PizzasDAOService extends RESTDAOService<any, any> {
 export class PizzasViewModelService {
   protected modo: ModoCRUD = 'list';
   protected listado: Array<any> = [];
-  protected ingredientList: Array<any> = [];
   protected elemento: any = { ingredients: []};
   protected idOriginal: any = null;
   protected listURL = '/pizzas';
+  public ingredientes: Array<Ingredientes> = [];
 
   constructor(protected notify: NotificationService, protected out: LoggerService, protected dao: PizzasDAOService,
-    public auth: AuthService, protected router: Router, private navigation: NavigationService) { }
+    public auth: AuthService, protected router: Router, private navigation: NavigationService, protected daoIngredientes: IngredientesDAOService) { }
 
   public get Modo(): ModoCRUD { return this.modo; }
   public get Listado(): Array<any> { return this.listado; }
@@ -62,8 +63,15 @@ export class PizzasViewModelService {
   }
 
   public add(): void {
-    this.elemento = { ingredients: []};
-    this.modo = 'add';
+    this.daoIngredientes.getAll().subscribe({
+      next: data  => {
+        this.ingredientes = data['content'];
+        this.elemento = { ingredients: []};
+        this.modo = 'add';
+      },
+      error: err => this.notify.add(err.message)
+    });
+
   }
   public edit(key: any): void {
     this.dao.get(key).subscribe({
@@ -147,7 +155,12 @@ export class PizzasViewModelService {
   }
 
   addIngredient(idIngredient: string){
-    this.elemento.ingredients.push(idIngredient);
+    for(let letra of idIngredient){
+      if(letra != '') {
+        this.elemento.ingredients.push(idIngredient);
+        return;
+      }
+    }
 
   }
 
@@ -159,7 +172,8 @@ export class PizzasViewModelService {
     this.elemento.ingredients.splice(index, 1);
   }
 
-  ingredientsList(Entidad: any){
-    this.ingredientList = Entidad;
+  getIngrediente(id: string): any {
+    return this.ingredientes.find(item => item.id === id);
   }
+
 }

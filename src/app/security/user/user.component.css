@@ -1,6 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+
 .main-container{
+text-align: center;
 height: 500px;
 width: 400px;
 border: 2px solid black;
-
 };
+
+
+.login1{
+	width: 200px;
+	height: 60px;
+	background-color: rgb(24, 101, 255);
+	font-size: 20px;
+	border-style: none;
+	border-radius: 0px 20px 0px 20px;
+	transition: 0.3s;
+	color: white;
+}
+
+.login1:hover{
+	border-radius: 20px 0px 20px 0px;
+	transition: 0.3s;
+	cursor: pointer;
+}
+
+.login1:active{
+	border-radius: 0px 0px 0px 0px;
+	transition: 0.2s;
+}
