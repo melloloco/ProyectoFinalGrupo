@@ -15,11 +15,10 @@
     </div>
     <div class="form-group col-md-2">
       <label class="form-label" for="ingredient">Ingredientes:</label>
-      <select class="form-control form-select" name="ingredient" id="ingredient" [(ngModel)]="VM.Elemento.idIngredient">
-        <option value="88181312-6029-466e-a722-28e41d78abee">gorgonzola</option>
-        <option value="78b6bdcc-e55b-4c17-890a-0a8f26e7506d">carne</option>
+      <select class="form-control form-select" name="ingredient" id="ingredient" [(ngModel)]="VM.Elemento.Ingredient" *ngFor="let item of VM.Elemento.ingredientList">
+        <option value="{{item.id}}">{{item.name}}</option>
       </select>
-      <button class="btn btn-info" (click)="VM.addIngredient(VM.Elemento.idIngredient)">
+      <button class="btn btn-info" (click)="VM.addIngredient(VM.Elemento.Ingredient)">
         <i class="fas fa-check">Añadir</i></button>
       <ul *ngFor="let item of VM.Elemento.ingredients">
         <li>

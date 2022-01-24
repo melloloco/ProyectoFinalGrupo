@@ -19,7 +19,7 @@ export class Ingredientes {
 })
 export class IngredientesDAOService extends RESTDAOService<any, any> {
   constructor(http: HttpClient) {
-    super(http, 'ingredientes', { context: new HttpContext().set(AUTH_REQUIRED, true) });
+    super(http, 'ingredients', { context: new HttpContext().set(AUTH_REQUIRED, true) });
   }
   page(page: number, rows: number = 20): Observable<{ page: number, pages: number, rows: number, list: Array<any> }> {
     return new Observable(subscriber => {
@@ -40,7 +40,7 @@ export class IngredientesViewModelService {
   protected listado: Array<any> = [];
   protected elemento: any = { ingredients: []};
   protected idOriginal: any = null;
-  protected listURL = '/Ingredientes';
+  protected listURL = '/ingredientes';
 
   constructor(protected notify: NotificationService, protected out: LoggerService, protected dao: IngredientesDAOService,
     public auth: AuthService, protected router: Router, private navigation: NavigationService) { }
@@ -52,11 +52,11 @@ export class IngredientesViewModelService {
 
   public list(): void {
     this.dao.query().subscribe({
-      next: (data: any[]) => {
+      next: data => {
         this.listado = data;
         this.modo = 'list';
       },
-      error: (err: { message: string; }) => this.notify.add(err.message)
+      error: err => this.notify.add(err.message)
     });
   }
 
@@ -66,29 +66,29 @@ export class IngredientesViewModelService {
   }
   public edit(key: any): void {
     this.dao.get(key).subscribe({
-      next: (data: any) => {
+      next: data => {
         this.elemento = data;
         this.idOriginal = key;
         this.modo = 'edit';
       },
-      error: (err: { message: string; }) => this.notify.add(err.message)
+      error: err => this.notify.add(err.message)
     });
   }
   public view(key: any): void {
     this.dao.get(key).subscribe({
-      next: (data: any) => {
+      next: data => {
         this.elemento = data;
         this.modo = 'view';
       },
-      error: (err: { message: string; }) => this.notify.add(err.message)
+      error: err => this.notify.add(err.message)
     });
   }
   public delete(key: any): void {
     if (!window.confirm('¿Seguro?')) { return; }
 
     this.dao.remove(key).subscribe({
-      next: (data: any) => this.load(), // this.list(),
-      error: (err: { message: string; }) => this.notify.add(err.message)
+      next: data => this.load(), // this.list(),
+      error: err => this.notify.add(err.message)
     });
   }
 
@@ -105,14 +105,14 @@ export class IngredientesViewModelService {
     switch (this.modo) {
       case 'add':
         this.dao.add(this.elemento).subscribe({
-          next: (data: any) => this.cancel(),
-          error: (err: { message: string; }) => this.notify.add(err.message)
+          next: data => this.cancel(),
+          error: err => this.notify.add(err.message)
         });
         break;
       case 'edit':
         this.dao.change(this.idOriginal, this.elemento).subscribe({
-          next: (data: any) => this.cancel(),
-          error: (err: { message: string; }) => this.notify.add(err.message)
+          next: data => this.cancel(),
+          error: err => this.notify.add(err.message)
         });
         break;
       case 'view':
@@ -134,14 +134,14 @@ export class IngredientesViewModelService {
   load(page: number = -1) {
     if(page < 0) page = this.page
     this.dao.page(page, this.rowsPerPage).subscribe({
-      next: (rslt: { page: number; pages: number; rows: number; list: any[]; }) => {
+      next: rslt => {
         this.page = rslt.page;
         this.totalPages = rslt.pages;
         this.totalRows = rslt.rows;
         this.listado = rslt.list;
         this.modo = 'list';
       },
-      error: (err: { message: string; }) => this.notify.add(err.message)
+      error: err => this.notify.add(err.message)
     })
   }
 

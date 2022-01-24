@@ -1,11 +1,12 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { IngredientesViewModelService } from './servicios.service';
 
 @Component({
   selector: 'app-ingredientes',
-  templateUrl: './ingredientes.component.html',
-  styleUrls: ['./ingredientes.component.css']
+  templateUrl: './tmpl-anfitrion.component.html',
+  // providers: [ IngredientesViewModelService ],
+  styleUrls: ['./componente.component.css']
 })
 export class IngredientesComponent implements OnInit, OnDestroy {
   constructor(protected vm: IngredientesViewModelService) { }
@@ -18,10 +19,58 @@ export class IngredientesComponent implements OnInit, OnDestroy {
     this.vm.clear()
   }
 }
+/*
+@Component({
+  selector: 'app-ingredientes-list',
+  templateUrl: './tmpl-list.sin-rutas.component.html',
+  styleUrls: ['./componente.component.css']
+})
+export class IngredientesListComponent implements OnInit, OnDestroy {
+  constructor(protected vm: IngredientesViewModelService) { }
+  public get VM(): IngredientesViewModelService { return this.vm; }
+  ngOnInit(): void { }
+  ngOnDestroy(): void {  }
+}
+
+@Component({
+  selector: 'app-ingredientes-add',
+  templateUrl: './tmpl-form.component.html',
+  styleUrls: ['./componente.component.css']
+})
+export class IngredientesAddComponent implements OnInit {
+  constructor(protected vm: IngredientesViewModelService) { }
+  public get VM(): IngredientesViewModelService { return this.vm; }
+  ngOnInit(): void { }
+}
+
+@Component({
+  selector: 'app-ingredientes-edit',
+  templateUrl: './tmpl-form.component.html',
+  styleUrls: ['./componente.component.css']
+})
+export class IngredientesEditComponent implements OnInit, OnDestroy {
+  constructor(protected vm: IngredientesViewModelService) { }
+  public get VM(): IngredientesViewModelService { return this.vm; }
+  ngOnInit(): void { }
+  ngOnDestroy(): void { }
+}
+
+@Component({
+  selector: 'app-ingredientes-view',
+  templateUrl: './tmpl-view.component.html',
+  styleUrls: ['./componente.component.css']
+})
+export class IngredientesViewComponent implements OnInit, OnDestroy {
+  constructor(protected vm: IngredientesViewModelService) { }
+  public get VM(): IngredientesViewModelService { return this.vm; }
+  ngOnInit(): void { }
+  ngOnDestroy(): void { }
+}
+*/
 @Component({
   selector: 'app-ingredientes-list',
   templateUrl: './tmpl-list.con-rutas.component.html',
-  styleUrls: ['./ingredientes.component.css']
+  styleUrls: ['./componente.component.css']
 })
 export class IngredientesListComponent implements OnInit {
   constructor(protected vm: IngredientesViewModelService) { }
@@ -35,7 +84,7 @@ export class IngredientesListComponent implements OnInit {
 @Component({
   selector: 'app-ingredientes-add',
   templateUrl: './tmpl-form.component.html',
-  styleUrls: ['./ingredientes.component.css']
+  styleUrls: ['./componente.component.css']
 })
 export class IngredientesAddComponent implements OnInit {
   constructor(protected vm: IngredientesViewModelService) { }
@@ -48,7 +97,7 @@ export class IngredientesAddComponent implements OnInit {
 @Component({
   selector: 'app-ingredientes-edit',
   templateUrl: './tmpl-form.component.html',
-  styleUrls: ['./ingredientes.component.css']
+  styleUrls: ['./componente.component.css']
 })
 export class IngredientesEditComponent implements OnInit, OnDestroy {
   private obs$: any;
@@ -74,7 +123,7 @@ export class IngredientesEditComponent implements OnInit, OnDestroy {
 @Component({
   selector: 'app-ingredientes-view',
   templateUrl: './tmpl-view.component.html',
-  styleUrls: ['./ingredientes.component.css']
+  styleUrls: ['./componente.component.css']
 })
 export class IngredientesViewComponent implements OnInit, OnDestroy {
   private obs$: any;
@@ -101,4 +150,3 @@ export const INGREDIENTES_COMPONENTES = [
   IngredientesComponent, IngredientesListComponent, IngredientesAddComponent,
   IngredientesEditComponent, IngredientesViewComponent,
 ];
-
