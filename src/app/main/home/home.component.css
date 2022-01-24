@@ -5,6 +5,7 @@
 
 #header #logo{margin:22px 0 0 0;}
 
+main{background-color: inherit; width: 100%;}
 
 /* Page Intro / Principal
 --------------------------------------------------------------------------------------------------------------- */
@@ -14,6 +15,14 @@
 #pageintro article p{max-width:65%; line-height:2rem;}
 #pageintro .heading{margin-bottom:20px; font-size:4rem;}
 #pageintro footer{margin-top:50px;}
+
+/* Team Members / Pie de ver nuestras pizzas */
+.team li:last-child{margin-bottom:0;}
+.team figure{display:block; text-align:center;}
+.team figure *{margin:0; padding:0;}
+.team figure figcaption{padding:20px 10px; line-height:1; border:solid; border-width:0 1px 1px 1px;}
+.team figure strong{display:block; margin-bottom:8px; font-size:1.4rem; font-weight:400;}
+.team figure em{display:block; font-style:normal; font-size:.8rem;}
 
 
 /* Content Area / Contenedor
@@ -34,16 +43,6 @@
 .elements article .heading{font-size:1.2rem; font-weight:700;}
 .elements article p{margin:0; line-height:normal;}
 
-
-
-
-/* Team Members / Pie de ver nuestras pizzas */
-.team li:last-child{margin-bottom:0;}
-.team figure{display:block; text-align:center;}
-.team figure *{margin:0; padding:0;}
-.team figure figcaption{padding:20px 10px; line-height:1; border:solid; border-width:0 1px 1px 1px;}
-.team figure strong{display:block; margin-bottom:8px; font-size:1.4rem; font-weight:400;}
-.team figure em{display:block; font-style:normal; font-size:.8rem;}
 
 /* Sidebar */
 .sidebar .sdb_holder{margin-bottom:50px;}
@@ -137,16 +136,15 @@ label span{color:#FF0000; background-color:inherit;}
 input:focus, textarea:focus, *:required:focus{border-color:#97A9BD !important;}
 
 .overlay{color:#FFFFFF; background-color:inherit;}
-.overlay::after{color:inherit; background-color:rgba(40,46,57,.7);}
-.overlay.light::after{background-color:rgba(151,169,189,.7);}
+.overlay::after{color:inherit; background-color:rgba(21, 21, 24, 0.7);}
 
 .gradient{color:#474747; background:linear-gradient(to bottom, #F4F4F4 55%, #FFFFFF 50%, #FFFFFF 100%);}
 @media screen and (max-width:750px){
 	.gradient{background:linear-gradient(to bottom, #F4F4F4 24%, #FFFFFF 19%, #FFFFFF 100%);}
 }
 
-.btn, .btn.inverse:hover{color:#FFFFFF; background-color:#97A9BD; border-color:#97A9BD;}
-.btn:hover, .btn.inverse{color:inherit; background-color:transparent; border-color:inherit;}
+.btn, .btn.inverse:hover{color:#FFFFFF; background-color:inherit; border-color:#97A9BD;}
+.btn:hover, .btn.inverse{color:inherit; background-color:#400605; border-color:inherit;}
 
 .imgover:hover::before{background-color:rgba(151,169,189,.5);}
 .imgover, .imgover:hover::after{color:#FFFFFF;}
@@ -179,10 +177,10 @@ input:focus, textarea:focus, *:required:focus{border-color:#97A9BD !important;}
 
 
 /* Content Area */
-.elements article{color:#474747; background-color:#FFFFFF; box-shadow:0px 0px 15px rgba(0,0,0,.3);}
-.elements article:hover{color:#FFFFFF; background-color:#97A9BD;}
-.elements article a i{color:#FFFFFF; background-color:#97A9BD;}
-.elements article:hover a i{color:#97A9BD; background-color:#FFFFFF;}
+.elements article{color:#FFFFFF; background-color:#682028; box-shadow:0px 0px 15px rgba(0,0,0,.3);}
+.elements article:hover{color:#FFFFFF; background-color:#49181d;}
+.elements article a i{color:#FFFFFF; background-color:black;}
+.elements article:hover a i{color:black; background-color:#FFFFFF;}
 
 #introblocks .elements li article{color:#FFFFFF; background-color:#97A9BD;}
 #introblocks .elements li article a i{color:#97A9BD; background-color:#FFFFFF;}
@@ -355,7 +353,7 @@ html, body{margin:0; padding:0; font-size:14px; line-height:1.6em;}
 .borderedbox{border:1px solid;}
 .overlay{position:relative; z-index:1;}
 .overlay::after{display:block; position:absolute; top:0; left:0; width:100%; height:100%; content:""; z-index:-1;}
-.bgded{background-position:top center; background-repeat:no-repeat; background-size:cover;}
+.bgded{background-position:top center; background-repeat:no-repeat; width: 100%; background-size:cover;}
 .circle{border-radius:50%; background-clip:padding-box;}
 
 .logoname{margin:0; padding:0; font-size:1.8rem; font-variant:small-caps;}
@@ -404,7 +402,7 @@ hr{display:block; width:100%; height:1px; border:solid; border-width:1px 0 0 0;}
 .font-x2{font-size:2.2rem;}
 .font-x3{font-size:3.2rem;}
 
-.wrapper{display:block; position:relative; width:100%; margin:0; padding:0; text-align:left; word-wrap:break-word;}
+.wrapper{display:block; position:relative; width:100%; background-color: inherit; margin:0; padding:0; text-align:left; word-wrap:break-word;}
 
 
 
@@ -453,3 +451,7 @@ address, article, aside, figcaption, figure, footer, header, main, nav, section{
 /* Font awesome/iconos
 --------------------------------------------------------------------------------------------------------------- */
 #fa-euro-sign{font-size: 12px;}
+
+/* Ingredientes
+--------------------------------------------------------------------------------------------------------------- */
+#bacon{background-color: inherit;}

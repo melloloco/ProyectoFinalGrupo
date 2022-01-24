@@ -5,6 +5,7 @@
 /* Header /	Prueba de Front End
 --------------------------------------------------------------------------------------------------------------- */
 
+
 #header #logo{margin:22px 0 0 0;}
 
 
@@ -16,6 +17,15 @@
 #pageintro article p{max-width:65%; line-height:2rem;}
 #pageintro .heading{margin-bottom:20px; font-size:4rem;}
 #pageintro footer{margin-top:50px;}
+
+
+/* Team Members / Pie de ver nuestras pizzas */
+.team li:last-child{margin-bottom:0;}
+.team figure{display:block; text-align:center;}
+.team figure *{margin:0; padding:0;}
+.team figure figcaption{padding:20px 10px; line-height:1; border:solid; border-width:0 1px 1px 1px;}
+.team figure strong{display:block; margin-bottom:8px; font-size:1.4rem; font-weight:400;}
+.team figure em{display:block; font-style:normal; font-size:.8rem;}
 
 
 /* Content Area / Contenedor

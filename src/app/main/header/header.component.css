@@ -4,18 +4,37 @@
 
 /* Header /	Prueba de Front End
 --------------------------------------------------------------------------------------------------------------- */
-
-#header #logo{margin:22px 0 0 0;}
+#user{
+  padding-left: 14px;
+  font-size: 30px;
+  }
+  #user:hover{
+    padding-left: 34px;
+    font-size: 45px;
+    color: white;
+    }
+#header #logo{margin:0 0 0 0;}
 #iconoUsuario{
   width: 20px;
   height: 20px;
 }
-#Logo{
-  width: 60px;
-  height: 60px;
-  border-radius:15px;
+.fl_left{
+  position: relative; width: 150px; height: 120px; background-color: inherit;
 }
-
+#Logo{
+  width: 120px;
+  height: 120px;
+}
+#Logo:hover{
+padding-right: 30px;
+  width: 150px;
+ height: 140px;
+}
+.clear{
+  padding: 0 14px;
+  font-size: 20px;
+  background-color: inherit;
+}
 
 /* Page Intro / Principal
 --------------------------------------------------------------------------------------------------------------- */
@@ -37,50 +56,29 @@
 .sectiontitle *{margin:0;}
 
 .elements-three li, .elements-four li{margin-bottom:50px;}
-.elements-three li:nth-last-child(-n+3), .elements-four li:nth-last-child(-n+4){margin-bottom:0;}/* Removes bottom margin from the last line of items - margin is restored in the media queries when items stack */
-.elements-three li:nth-child(3n+1), .elements-four li:nth-child(4n+1){margin-left:0; clear:left;}/* Removes the need to add class="first" */
+.elements-three li:nth-last-child(-n+3), .elements-four li:nth-last-child(-n+4){margin-bottom:0;}
+.elements-three li:nth-child(3n+1), .elements-four li:nth-child(4n+1){margin-left:0; clear:left;}
 .elements article{display:block; padding:30px 15px; border-radius:50px 0; text-align:center;}
 .elements article *{margin:0 0 15px 0; padding:0; line-height:1;}
 .elements article i{width:60px; height:60px; line-height:60px; margin-bottom:30px; font-size:1.6rem; text-align:center; border-radius:50%;}
 .elements article .heading{font-size:1.2rem; font-weight:700;}
 .elements article p{margin:0; line-height:normal;}
 
-#introblocks{display:block; position:relative; margin:-160px 0 130px 0; z-index:1;}/* 160px => 80px + container padding */
-
-
-
+#introblocks{display:block; position:relative; margin:-160px 0 130px 0; z-index:1;}
 
 /* Team Members / Pie de ver nuestras pizzas */
-.team li:last-child{margin-bottom:0;}/* Used when elements stack in small viewports */
+.team li:last-child{margin-bottom:0;}
 .team figure{display:block; text-align:center;}
 .team figure *{margin:0; padding:0;}
 .team figure figcaption{padding:20px 10px; line-height:1; border:solid; border-width:0 1px 1px 1px;}
 .team figure strong{display:block; margin-bottom:8px; font-size:1.4rem; font-weight:400;}
 .team figure em{display:block; font-style:normal; font-size:.8rem;}
 
+
 /* Sidebar */
 .sidebar .sdb_holder{margin-bottom:50px;}
 .sidebar .sdb_holder:last-child{margin-bottom:0;}
 
-
-/* Footer / Pie de pagina
---------------------------------------------------------------------------------------------------------------- */
-#footer{padding:80px 0;}
-
-#footer .heading{margin-bottom:50px; font-size:1.2rem;}
-#footer .logoname{margin-bottom:50px;}
-#footer p + .faico{margin-top:30px;}
-
-#footer .linklist li{display:block; margin-bottom:15px; padding:0 0 15px 0; border-bottom:1px solid;}
-#footer .linklist li:last-child{margin:0; padding:0; border:none;}
-#footer .linklist li::before, #footer .linklist li::after{display:table; content:"";}
-#footer .linklist li, #footer .linklist li::after{clear:both;}
-
-#footer .latestimg > li{float:left; width:30%; margin:0 0 5% 5%;}
-#footer .latestimg > li:nth-last-child(-n+3){margin-bottom:0;}/* Removes bottom margin from the last three items - margin is restored in the media queries when items stack */
-#footer .latestimg > li:nth-child(3n+1){margin-left:0; clear:left;}/* Removes the need to add class="first" */
-#footer .latestimg > li img{width:100%;}/* Force the image to resize to take the full space - may have to be changed for tablets, depends on personal preference */
-#footer .latestimg > li a.imgover{display:block;}
 
 
 /* Copyright
@@ -103,8 +101,7 @@ nav ul, nav ol{margin:0; padding:0; list-style:none;}
 #mainav .drop::after, #mainav li li .drop::after, #breadcrumb li a::after, .sidebar nav a::after{position:absolute; font-family:"Font Awesome\ 5 Free"; font-weight:900; font-size:10px; line-height:10px;}
 
 /* Top Navigation */
-#mainav ul{text-transform:uppercase;}
-#mainav ul ul{position:absolute; width:180px; text-transform:none; z-index:9999;}
+#mainav ul ul{position:absolute; width:180px; z-index:9999;}
 #mainav ul ul ul{left:180px; top:0;}
 #mainav li{display:inline-block; position:relative; margin:0 15px 0 0; padding:0;}
 #mainav li:last-child{margin-right:0;}
@@ -164,12 +161,11 @@ input:focus, textarea:focus, *:required:focus{border-color:#97A9BD !important;}
 .imgover:hover::before{background-color:rgba(151,169,189,.5);}
 .imgover, .imgover:hover::after{color:#FFFFFF;}
 
-.logoname a{color:#f1eded;}
-.logoname::first-letter, .logoname span{color:#97BDAB;}
-
+.logoname a{color:blue;}
+.logoname::first-letter, .logoname span{color:blue;}
 
 /* Rows */
-.row1{color:#FFFFFF; background-color:#000000;}
+.row1{color:#FFFFFF; background-color:#400605;}
 .row2{color:#474747; background-color:#F4F4F4;}
 .row3{color:#474747; background-color:#FFFFFF;}
 .row4{color:#A5A6AA; background-color:#000000;}
@@ -243,7 +239,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#97A9BD !important;}
 
 /* Navigation */
 #mainav li a{color:inherit;}
-#mainav .active a, #mainav a:hover, #mainav li:hover > a{color:#97A9BD; background-color:inherit;}
+#mainav .active a, #mainav a:hover, #mainav li:hover > a{color:#c21d17; background-color:inherit; font-size: 21px;}
 #mainav li li a, #mainav .active li a{color:#FFFFFF; background-color:rgba(151,169,189,.5); border-color:rgba(151,169,189,.5);/* #97A9BD */}
 #mainav li li:hover > a, #mainav .active .active > a{color:#FFFFFF; background-color:#97A9BD;}
 #mainav form select{color:#474747; background-color:#FFFFFF;}
@@ -281,9 +277,6 @@ input:focus, textarea:focus, *:required:focus{border-color:#97A9BD !important;}
 @media screen and (max-width:978px){
 	.hoc{max-width:90%;}
 
-	#header{padding:30px 0;}
-	#header #logo{margin-top:0;}
-
 	#mainav ul{display:none;}
 	#mainav form{display:block; margin-top:2px;}
 
@@ -296,11 +289,10 @@ input:focus, textarea:focus, *:required:focus{border-color:#97A9BD !important;}
 @media screen and (max-width:750px){
 	.imgl, .imgr{display:inline-block; float:none; margin:0 0 10px 0;}
 	.fl_left, .fl_right{display:block; float:none;}
-	.group .group > *:last-child, .clear .clear > *:last-child, .clear .group > *:last-child, .group .clear > *:last-child{margin-bottom:0;}/* Experimental - Needs more testing in different situations, stops double margin when stacking */
+	.group .group > *:last-child, .clear .clear > *:last-child, .clear .group > *:last-child, .group .clear > *:last-child{margin-bottom:0;}
 	.one_half, .one_third, .two_third, .one_quarter, .two_quarter, .three_quarter{display:block; float:none; width:auto; margin:0 0 30px 0;}
 
 	#header{text-align:center;}
-	#header #logo{margin:0 0 15px 0;}
 
 	#pageintro article, #pageintro article p{max-width:none;}
 	#pageintro .heading{font-size:2rem;}
