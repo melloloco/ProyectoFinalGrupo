@@ -19,7 +19,7 @@
             </div>
             <div class="col-md-10">
               <a class="btn btn-link btn-lg px-0" routerLink="{{item.id}}/{{item.name}}">
-                {{item.name}} {{item.price}}€</a>
+                {{item.name | capitalize}}</a>
               <br>
             </div>
           </div>
@@ -29,7 +29,7 @@
         <div class="btn-group" role="group">
           <button class="btn btn-info" routerLink="{{item.id}}/{{item.name}}">
             <i class="fas fa-eye"></i></button>
-          <button class="btn btn-success" [routerLink]="[item.id, 'edit']"><i class="fas fa-pen"></i></button>
+          <!-- <button class="btn btn-success" [routerLink]="[item.id, 'edit']"><i class="fas fa-pen"></i></button> -->
           <button class="btn btn-danger" (click)="VM.delete(item.id)"><i class="far fa-trash-alt"></i></button>
         </div>
       </td>
