@@ -38,15 +38,15 @@
 .sectiontitle *{margin:0;}
 
 .elements-three li, .elements-four li{margin-bottom:50px;}
-.elements-three li:nth-last-child(-n+3), .elements-four li:nth-last-child(-n+4){margin-bottom:0;}/* Removes bottom margin from the last line of items - margin is restored in the media queries when items stack */
-.elements-three li:nth-child(3n+1), .elements-four li:nth-child(4n+1){margin-left:0; clear:left;}/* Removes the need to add class="first" */
+.elements-three li:nth-last-child(-n+3), .elements-four li:nth-last-child(-n+4){margin-bottom:0;}
+.elements-three li:nth-child(3n+1), .elements-four li:nth-child(4n+1){margin-left:0; clear:left;}
 .elements article{display:block; padding:30px 15px; border-radius:50px 0; text-align:center;}
 .elements article *{margin:0 0 15px 0; padding:0; line-height:1;}
 .elements article i{width:60px; height:60px; line-height:60px; margin-bottom:30px; font-size:1.6rem; text-align:center; border-radius:50%;}
 .elements article .heading{font-size:1.2rem; font-weight:700;}
 .elements article p{margin:0; line-height:normal;}
 
-#introblocks{display:block; position:relative; margin:-160px 0 130px 0; z-index:1;}/* 160px => 80px + container padding */
+#introblocks{display:block; position:relative; margin:-160px 0 130px 0; z-index:1;}
 
 /* Sidebar */
 .sidebar .sdb_holder{margin-bottom:50px;}
@@ -67,9 +67,9 @@
 #footer .linklist li, #footer .linklist li::after{clear:both;}
 
 #footer .latestimg > li{float:left; width:30%; margin:0 0 5% 5%;}
-#footer .latestimg > li:nth-last-child(-n+3){margin-bottom:0;}/* Removes bottom margin from the last three items - margin is restored in the media queries when items stack */
-#footer .latestimg > li:nth-child(3n+1){margin-left:0; clear:left;}/* Removes the need to add class="first" */
-#footer .latestimg > li img{width:100%;}/* Force the image to resize to take the full space - may have to be changed for tablets, depends on personal preference */
+#footer .latestimg > li:nth-last-child(-n+3){margin-bottom:0;}
+#footer .latestimg > li:nth-child(3n+1){margin-left:0; clear:left;}
+#footer .latestimg > li img{width:100%;}
 #footer .latestimg > li a.imgover{display:block;}
 
 
@@ -177,7 +177,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#97A9BD !important;}
 @media screen and (max-width:750px){
 	.imgl, .imgr{display:inline-block; float:none; margin:0 0 10px 0;}
 	.fl_left, .fl_right{display:block; float:none;}
-	.group .group > *:last-child, .clear .clear > *:last-child, .clear .group > *:last-child, .group .clear > *:last-child{margin-bottom:0;}/* Experimental - Needs more testing in different situations, stops double margin when stacking */
+	.group .group > *:last-child, .clear .clear > *:last-child, .clear .group > *:last-child, .group .clear > *:last-child{margin-bottom:0;}
 	.one_half, .one_third, .two_third, .one_quarter, .two_quarter, .three_quarter{display:block; float:none; width:auto; margin:0 0 30px 0;}
 
 	#header{text-align:center;}

@@ -173,7 +173,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#97A9BD !important;}
 #header #logo a{color:inherit;}
 
 /* Shout / Debajo de las dos imagenes grandes*/
-.shout figure{display:block; max-width:546px;/* same width as the image - contains the caption */}
+.shout figure{display:block; max-width:546px;}
 .shout figure figcaption{display:block; position:relative;}
 .shout figure figcaption a{display:block; position:relative; padding:15px; border:solid; border-width:0 1px 1px 1px;}
 .shout figure figcaption a::after{position:absolute; top:12px; right:15px; width:30px; height:30px; line-height:30px; font-family:"Font Awesome\ 5 Free"; font-weight:900; content:"\f105";/* fa-angle-right */ text-align:center; border-radius:50%;}
@@ -193,11 +193,11 @@ input:focus, textarea:focus, *:required:focus{border-color:#97A9BD !important;}
 #introblocks .elements li article a i{color:#97A9BD; background-color:#FFFFFF;}
 #introblocks .elements li article:hover{color:#474747; background-color:#FFFFFF !important;}
 #introblocks .elements li article:hover a i{color:#FFFFFF !important; background-color:#97A9BD;}
-#introblocks .elements li:nth-child(2) article, #introblocks .elements li:nth-child(2) article:hover a i{background-color:#A197BD;}/* Purple */
+#introblocks .elements li:nth-child(2) article, #introblocks .elements li:nth-child(2) article:hover a i{background-color:#A197BD;}
 #introblocks .elements li:nth-child(2) article a i{color:#A197BD;}
-#introblocks .elements li:nth-child(3) article, #introblocks .elements li:nth-child(3) article:hover a i{background-color:#BDA697;}/* Brown */
+#introblocks .elements li:nth-child(3) article, #introblocks .elements li:nth-child(3) article:hover a i{background-color:#BDA697;}
 #introblocks .elements li:nth-child(3) article a i{color:#BDA697;}
-#introblocks .elements li:nth-child(4) article, #introblocks .elements li:nth-child(4) article:hover a i{background-color:#97BDAB;}/* Green */
+#introblocks .elements li:nth-child(4) article, #introblocks .elements li:nth-child(4) article:hover a i{background-color:#97BDAB;}
 #introblocks .elements li:nth-child(4) article a i{color:#97BDAB;}
 
 .shout figure figcaption a{color:inherit; background-color:inherit; border-color:#D7D7D7;}
@@ -236,7 +236,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#97A9BD !important;}
 /* Navigation */
 #mainav li a{color:inherit;}
 #mainav .active a, #mainav a:hover, #mainav li:hover > a{color:#c21d17; background-color:inherit; font-size: 21px;}
-#mainav li li a, #mainav .active li a{color:#FFFFFF; background-color:rgba(151,169,189,.5); border-color:rgba(151,169,189,.5);/* #97A9BD */}
+#mainav li li a, #mainav .active li a{color:#FFFFFF; background-color:rgba(151,169,189,.5); border-color:rgba(151,169,189,.5);}
 #mainav li li:hover > a, #mainav .active .active > a{color:#FFFFFF; background-color:#97A9BD;}
 #mainav form select{color:#474747; background-color:#FFFFFF;}
 
