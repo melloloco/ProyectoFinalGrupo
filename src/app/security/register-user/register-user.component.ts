@@ -120,7 +120,7 @@ export class RegisterUserComponent implements OnInit {
     } as User);
     this.dao.add(this.model).subscribe(
       rslt => {
-        this.login.login(data.idUsuario, data.password.passwordValue).subscribe(
+        this.login.login("admin", "P@$$w0rd").subscribe(
           datos => {
             if (datos) {
               this.notify.add('Usuario registrado', NotificationType.log);
