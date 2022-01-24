@@ -182,16 +182,16 @@ input:focus, textarea:focus, *:required:focus{border-color:#97A9BD !important;}
 .elements article a i{color:#FFFFFF; background-color:black;}
 .elements article:hover a i{color:black; background-color:#FFFFFF;}
 
-#introblocks .elements li article{color:#FFFFFF; background-color:#97A9BD;}
-#introblocks .elements li article a i{color:#97A9BD; background-color:#FFFFFF;}
+#introblocks .elements li article{color:#FFFFFF; background-color:#bda697;}
+#introblocks .elements li article a i{color:#da2303; background-color:#FFFFFF;}
 #introblocks .elements li article:hover{color:#474747; background-color:#FFFFFF !important;}
-#introblocks .elements li article:hover a i{color:#FFFFFF !important; background-color:#97A9BD;}
-#introblocks .elements li:nth-child(2) article, #introblocks .elements li:nth-child(2) article:hover a i{background-color:#A197BD;}/* Purple */
-#introblocks .elements li:nth-child(2) article a i{color:#A197BD;}
-#introblocks .elements li:nth-child(3) article, #introblocks .elements li:nth-child(3) article:hover a i{background-color:#BDA697;}/* Brown */
-#introblocks .elements li:nth-child(3) article a i{color:#BDA697;}
-#introblocks .elements li:nth-child(4) article, #introblocks .elements li:nth-child(4) article:hover a i{background-color:#97BDAB;}/* Green */
-#introblocks .elements li:nth-child(4) article a i{color:#97BDAB;}
+#introblocks .elements li article:hover a i{color:#FFFFFF !important; background-color:#bda697;}
+#introblocks .elements li:nth-child(2) article, #introblocks .elements li:nth-child(2) article:hover a i{background-color:#BDA697;}
+#introblocks .elements li:nth-child(2) article a i{color:#da2303;}
+#introblocks .elements li:nth-child(3) article, #introblocks .elements li:nth-child(3) article:hover a i{background-color:#BDA697;}
+#introblocks .elements li:nth-child(3) article a i{color:#da2303;}
+#introblocks .elements li:nth-child(4) article, #introblocks .elements li:nth-child(4) article:hover a i{background-color:#bda697;}
+#introblocks .elements li:nth-child(4) article a i{color:#da2303;}
 
 .shout figure figcaption a{color:inherit; background-color:#682028; border-color:white;}
 .shout figure:hover figcaption a, .shout figure figcaption a::after{color:#682028; background-color:white; border-color:#97A9BD;}
@@ -212,7 +212,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#97A9BD !important;}
 #ctdetails figure > ul li:hover a i{color:#A197BD; background-color:#FFFFFF !important;}
 #ctdetails figure > ul li:nth-child(2):hover, #ctdetails figure > ul li:nth-child(2) a i{background-color:#BDA697;}
 #ctdetails figure > ul li:nth-child(2):hover a i{color:#BDA697;}
-#ctdetails figure > ul li:nth-child(3):hover, #ctdetails figure > ul li:nth-child(3) a i{background-color:#97BDAB;}
+#ctdetails figure > ul li:nth-child(3):hover, #ctdetails figure > ul li:nth-child(3) a i{background-color:#94420b;}
 #ctdetails figure > ul li:nth-child(3):hover a i{color:#97BDAB;}
 
 #ctdetails input, #ctdetails button{border-color:transparent;}
